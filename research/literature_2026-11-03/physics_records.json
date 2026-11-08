@@ -1,0 +1,391 @@
+[
+  {
+    "id": "helbing1995social",
+    "title": "Social force model for pedestrian dynamics",
+    "authors": [
+      "Dirk Helbing",
+      "Péter Molnár"
+    ],
+    "year": 1995,
+    "url": "https://doi.org/10.1103/PhysRevE.51.4282",
+    "track": "physics_social_dynamics",
+    "method": "目标驱动项、人与边界斥力及吸引项构成随机动力系统。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/cond-mat/9805244v1",
+        "section": "II; III, Eqs.1-11",
+        "finding": "社会力表示行动动机，不是环境直接施加在人体上的机械力；叠加各项产生运动方程。"
+      }
+    ],
+    "limitations": "经典行为近似，不能推出真实行人遵守封闭系统能量守恒或固定交互参数。",
+    "transfer": "可作为Falcon/NavThinker的人运动外推基线或预测残差先验；不能靠单独编辑训练辅助头改变未接入该头的策略。",
+    "pilot": "CPU比较匀速、SFM和有限加速度模型的风险排序；核对时间单位、朝向和观察噪声，再决定是否训练残差。",
+    "priority": "foundation",
+    "verification_status": "primary_fulltext_verified",
+    "retrieved_at": "2026-11-03",
+    "correction_check": "Consulted landing pages showed no withdrawal/correction notice; no exhaustive Crossmark or retraction-database audit.",
+    "doi": "10.1103/PhysRevE.51.4282",
+    "arxiv_id": "cond-mat/9805244",
+    "version": "v1",
+    "venue": "Physical Review E",
+    "volume": "51",
+    "pages": "4282-4286",
+    "pmid": "9963139",
+    "metadata_source": "https://pubmed.ncbi.nlm.nih.gov/9963139/",
+    "version_note": "正式1995；arXiv上传1998，按同一论文计一次。",
+    "number": "5",
+    "publication_date": "1995-05",
+    "journal_abbreviation": "Phys Rev E Stat Phys Plasmas Fluids Relat Interdiscip Topics",
+    "nlm_authors": [
+      "Helbing D",
+      "Molnár P"
+    ],
+    "pmid_verified_source": "https://pubmed.ncbi.nlm.nih.gov/9963139/"
+  },
+  {
+    "id": "vandenberg2011orca",
+    "title": "Reciprocal n-Body Collision Avoidance",
+    "authors": [
+      "Jur van den Berg",
+      "Stephen J. Guy",
+      "Ming Lin",
+      "Dinesh Manocha"
+    ],
+    "year": 2011,
+    "url": "https://gamma-web.iacs.umd.edu/ORCA/",
+    "track": "physics_social_dynamics",
+    "method": "速度障碍的可行半平面交集，线性规划选择接近期望速度的动作。",
+    "evidence": [
+      {
+        "url": "https://gamma-web.iacs.umd.edu/ORCA/publications/ORCA.pdf",
+        "section": "§1; §4.2, Eq.6; §5",
+        "finding": "碰撞责任各承担一半；原文假设精确感知及其他机器人采用相同避碰协议；拥挤时可行域可能为空。"
+      }
+    ],
+    "limitations": "连续速度、多智能体互惠假设不等价于单机器人面对不可反应行人；局部无碰撞不代表全局到达或无死锁。",
+    "transfer": "适合作为几何避碰teacher/强控制基线；Falcon四离散动作需逐动作rollout，不能直接声称保留原连续控制保证。",
+    "pilot": "固定相同观测和离散动作，比较完整责任VO、半责任ORCA与原actor；报告停滞与碰撞，禁止用GT人状态对比只看图像的agent。",
+    "priority": "high",
+    "verification_status": "primary_fulltext_verified",
+    "retrieved_at": "2026-11-03",
+    "correction_check": "Consulted landing pages showed no withdrawal/correction notice; no exhaustive Crossmark or retraction-database audit.",
+    "doi": "10.1007/978-3-642-19457-3_1",
+    "venue": "Robotics Research, Springer Tracts in Advanced Robotics",
+    "volume": "70",
+    "pages": "3-19",
+    "local_source": "physics_sources/orca.pdf",
+    "metadata_source": "https://github.com/snape/RVO2/blob/main/CITATION.cff"
+  },
+  {
+    "id": "li2024densekoopman",
+    "title": "DenseKoopman: A Plug-and-Play Framework for Dense Pedestrian Trajectory Prediction",
+    "authors": [
+      "Xianbang Li",
+      "Yilong Ren",
+      "Han Jiang",
+      "Haiyang Yu",
+      "Yanlei Cui",
+      "Liang Xu"
+    ],
+    "year": 2024,
+    "url": "https://www.ijcai.org/proceedings/2024/113",
+    "track": "physics_social_dynamics",
+    "method": "Koopman提升空间内预测，解码还原轨迹。",
+    "evidence": [
+      {
+        "url": "https://www.ijcai.org/proceedings/2024/0113.pdf",
+        "section": "§3.1-3.4; §4.1",
+        "finding": "以有限模型近似无限维Koopman演化；测试MOT20/HT21/VSCrowd密集场景，坐标单位为像素，ADE/FDE使用best-of-20。"
+      }
+    ],
+    "limitations": "预测指标不是闭环导航；线性提升不是任意非线性系统存在精确有限维线性化的证明；像素结果不可直接与米制比较。",
+    "transfer": "候选：冻结NavThinker表示，用低维、带动作输入的线性残差预测风险特征；从离线轨迹学习仍须识别动作覆盖与分布移位。",
+    "pilot": "比较同维同参数线性ridge、MLP残差与Koopman约束，检测多步谱半径/漂移、风险排序和闭环收益。",
+    "priority": "medium",
+    "verification_status": "primary_fulltext_verified",
+    "retrieved_at": "2026-11-03",
+    "correction_check": "Consulted landing pages showed no withdrawal/correction notice; no exhaustive Crossmark or retraction-database audit.",
+    "doi": "10.24963/ijcai.2024/113",
+    "venue": "IJCAI 2024",
+    "pages": "1020-1028",
+    "local_source": "physics_sources/densekoopman.pdf",
+    "code_url": "https://github.com/lixianbang/DenseKoopman"
+  },
+  {
+    "id": "wang2024navidiff",
+    "title": "Human-Robot Cooperative Distribution Coupling for Hamiltonian-Constrained Social Navigation",
+    "authors": [
+      "Weizheng Wang",
+      "Chao Yu",
+      "Yu Wang",
+      "Byung-Cheol Min"
+    ],
+    "year": 2024,
+    "url": "https://arxiv.org/abs/2409.13573",
+    "track": "physics_social_dynamics",
+    "method": "端口Hamiltonian动态结构、扩散式交互不确定性与RL。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2409.13573v2",
+        "section": "§IV-A, Eqs.3-7; §V-A",
+        "finding": "采用J-R结构与能量平衡；实验行人由ORCA/SF驱动，机器人对行人不可见。"
+      }
+    ],
+    "limitations": "论文所用结构及输入条件下的被动性不能自动成为真实视觉社会导航的碰撞保证；不可见机器人实验不证明双向适应。",
+    "transfer": "是“物理+扩散+社交导航”的直接先例，不能将此组合当新意；可借鉴耗散结构限制latent rollout发散。",
+    "pilot": "先用同参数自由残差与耗散残差对照，统计多步误差/风险失真/停止率；若只压平预测造成过度停滞则放弃。",
+    "priority": "prior_art_high",
+    "verification_status": "primary_fulltext_verified",
+    "retrieved_at": "2026-11-03",
+    "correction_check": "Consulted landing pages showed no withdrawal/correction notice; no exhaustive Crossmark or retraction-database audit.",
+    "arxiv_id": "2409.13573",
+    "version": "v2",
+    "version_date": "2025-03-07",
+    "first_public_date": "2024-09-20",
+    "project_url": "https://sites.google.com/view/NaviDIFF"
+  },
+  {
+    "id": "liao2025atom",
+    "title": "AToM: Adaptive Theory-of-Mind-Based Human Motion Prediction in Long-Term Human-Robot Interactions",
+    "authors": [
+      "Yuwen Liao",
+      "Muqing Cao",
+      "Xinhang Xu",
+      "Lihua Xie"
+    ],
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2502.05792",
+    "track": "physics_social_dynamics",
+    "method": "微分博弈预测人对机器人的内部信念，UKF在线更新行为参数。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2502.05792v2",
+        "section": "§III-B, Eqs.3-5; Algorithm1",
+        "finding": "将递归ToM改写为参数化general-sum博弈；用预测与观察轨迹更新安全距离、速度等参数。输入包含目标与障碍信息。"
+      }
+    ],
+    "limitations": "已知目标、效用模型和反复互动是重要条件；不能宣称ILQ近似求解在任意非凸问题得到全局Nash均衡；匿名短episode的认知适应不可由此直接推出。",
+    "transfer": "建议只学低维交互类型/风险偏好latent，不先重训视觉encoder；必须区分轨迹回放行人与会对机器人反应的人。",
+    "pilot": "两智能体交会CPU沙盒：固定偏好/变化偏好；比较无适应、滑窗回归、UKF，观察后验识别与deadlock，后续才接导航。",
+    "priority": "medium",
+    "verification_status": "primary_fulltext_verified",
+    "retrieved_at": "2026-11-03",
+    "correction_check": "Consulted landing pages showed no withdrawal/correction notice; no exhaustive Crossmark or retraction-database audit.",
+    "arxiv_id": "2502.05792",
+    "version": "v2",
+    "version_date": "2025-02-12",
+    "first_public_date": "2025-02-09",
+    "code_url": "https://github.com/centiLinda/AToM-human-prediction"
+  },
+  {
+    "id": "baden2025tpk",
+    "title": "TPK: Trustworthy Trajectory Prediction Integrating Prior Knowledge For Interpretability and Kinematic Feasibility",
+    "authors": [
+      "Marius Baden",
+      "Ahmed Abouelazm",
+      "Christian Hubschneider",
+      "Yin Wu",
+      "Daniel Slieter",
+      "J. Marius Zöllner"
+    ],
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.06743",
+    "track": "physics_social_dynamics",
+    "method": "交互先验引导注意力，类别专属运动学层把控制量转成轨迹。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2505.06743v4",
+        "section": "§III-B; §IV; §V, TablesIII-V",
+        "finding": "行人使用有限加速度双积分器；AV2中可行性与预测误差存在取舍，完整模型并非各精度指标优于HPTR。"
+      }
+    ],
+    "limitations": "AV2主要为车辆、含带噪标签；运动学可行不等于社会正确或碰撞安全；全模型17.7M参数，不应称直接免训练补丁。",
+    "transfer": "可为NavThinker轨迹decoder加受限加速度层，或将违反运动界限作为不确定性提示；界限需按数据采样/行人生成器重新标定。",
+    "pilot": "固定预测器，对比原轨迹、平滑、加速度投影与软惩罚；同时测ADE、碰撞风险漏报和真实导航，防止平滑掩盖急转。",
+    "priority": "high",
+    "verification_status": "primary_fulltext_verified",
+    "retrieved_at": "2026-11-03",
+    "correction_check": "Consulted landing pages showed no withdrawal/correction notice; no exhaustive Crossmark or retraction-database audit.",
+    "arxiv_id": "2505.06743",
+    "version": "v4",
+    "version_date": "2026-03-04",
+    "first_public_date": "2025-05-10"
+  },
+  {
+    "id": "bennema2025stflow",
+    "title": "STFlow: Data-Coupled Flow Matching for Geometric Trajectory Simulation",
+    "authors": [
+      "Kiet Bennema ten Brinke",
+      "Koen Minartz",
+      "Vlado Menkovski"
+    ],
+    "year": 2025,
+    "url": "https://arxiv.org/abs/2505.18647",
+    "track": "physics_social_dynamics",
+    "method": "使用观测条件随机游走作生成先验，学习到目标轨迹的flow。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2505.18647v3",
+        "section": "§3.2, Eq.2-3; §4.1.3; AppendixA.4",
+        "finding": "先验由已观察速度与噪声构建，human评测是NBA球员轨迹；报告单训练8–41小时、总约750GPU小时。"
+      }
+    ],
+    "limitations": "不是HM3D社会导航验证；best-of-k与均值指标表现不同；不能把“可单卡”写成一小时可复现。",
+    "transfer": "借鉴惯性/连续性先验做小轨迹残差或采样候选，暂不复现完整生成模型；不直接支持编辑视频WM权重即可提高SR。",
+    "pilot": "在相同小MLP/flow与训练预算下比较高斯、匀速随机游走、SFM先验，按预测时延和风险排序筛选。",
+    "priority": "medium",
+    "verification_status": "primary_fulltext_verified",
+    "retrieved_at": "2026-11-03",
+    "correction_check": "Consulted landing pages showed no withdrawal/correction notice; no exhaustive Crossmark or retraction-database audit.",
+    "arxiv_id": "2505.18647",
+    "version": "v3",
+    "version_date": "2026-05-27",
+    "first_public_date": "2025-05-24",
+    "version_note": "v1标题Flow Matching for Geometric Trajectory Simulation；采用v3新标题，一篇计一次。",
+    "code_url": "https://github.com/MrKietho/STFlow"
+  },
+  {
+    "id": "galati2025gtsfm",
+    "title": "A Game of Social Forces: Integrating Non-cooperative Game Theory with Social Force Model for a Socially-acceptable Mobile Robot Navigation",
+    "authors": [
+      "Giada Galati",
+      "Andrea Usai",
+      "Giacomo Vignolo",
+      "Simone Macrì",
+      "Alessandro Rizzo"
+    ],
+    "year": 2025,
+    "url": "https://doi.org/10.1007/s10846-025-02318-0",
+    "track": "physics_social_dynamics",
+    "method": "SFM生成候选轨迹，非合作博弈选择；用神经网络近似慢参数估计。",
+    "evidence": [
+      {
+        "url": "https://link.springer.com/content/pdf/10.1007/s10846-025-02318-0.pdf",
+        "section": "pp.3,6 (§4.1); §6-7",
+        "finding": "将每agent候选限制为四条以控制指数组合；仿真量化结果改善，但76人真实主观评测未发现算法间显著差异。"
+      }
+    ],
+    "limitations": "理性效用/候选集合假设；多agent复杂度；几何指标提升不能替代人感知改善。",
+    "transfer": "适合把四种候选“轨迹/意图”转成离散重排序teacher；其四候选轨迹不等于Falcon四瞬时动作。",
+    "pilot": "仅最相关一名行人，2×2或4×4博弈；比较同代价的独立最优、minimax和博弈解，限定延迟预算。",
+    "priority": "medium",
+    "verification_status": "primary_fulltext_verified",
+    "retrieved_at": "2026-11-03",
+    "correction_check": "Consulted landing pages showed no withdrawal/correction notice; no exhaustive Crossmark or retraction-database audit.",
+    "doi": "10.1007/s10846-025-02318-0",
+    "venue": "Journal of Intelligent & Robotic Systems",
+    "volume": "111",
+    "article_number": "110",
+    "publication_date": "2025-10-07",
+    "local_source": "physics_sources/gtsfm.pdf"
+  },
+  {
+    "id": "martinez2025shine",
+    "title": "SHINE: Social Homology Identification for Navigation in Crowded Environments",
+    "authors": [
+      "Diego Martinez-Baselga",
+      "Oscar de Groot",
+      "Luzia Knoedler",
+      "Luis Riazuelo",
+      "Javier Alonso-Mora",
+      "Luis Montano"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.1177/02783649251344639",
+    "track": "physics_social_dynamics",
+    "method": "同调类表示左右绕行/先后通过，学习类代价，再由MPC执行。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2404.16705v3",
+        "section": "§4.3; §5.1-5.3",
+        "finding": "ETH/UCY训练类选择；§5.3显式降低延续上一同调类的代价，防止频繁切换；局部控制使用运动学约束。"
+      }
+    ],
+    "limitations": "已有拓扑模式选择和一致性约束，单加左右偏好不新；需要轨迹/障碍推断，过强坚持旧模式会妨碍紧急避碰。",
+    "transfer": "优先研究低维“模式一致性+风险触发释放”接在Falcon动作重排序或NavThinker未来特征上，不重训大WM。",
+    "pilot": "对向/交叉/窄门场景比较原actor、简单动作平滑、模式记忆、风险解除记忆；测左右切换、停滞、SR/SPL/碰撞。",
+    "priority": "high",
+    "verification_status": "primary_fulltext_verified",
+    "retrieved_at": "2026-11-03",
+    "correction_check": "Consulted landing pages showed no withdrawal/correction notice; no exhaustive Crossmark or retraction-database audit.",
+    "doi": "10.1177/02783649251344639",
+    "arxiv_id": "2404.16705",
+    "version": "v3",
+    "version_date": "2025-07-31",
+    "first_public_date": "2024-04-25",
+    "venue": "The International Journal of Robotics Research",
+    "publication_online_year": 2025,
+    "volume": "45",
+    "number": "1",
+    "pages": "60-79",
+    "code_url": "https://github.com/dmartinezbaselga/SHINE",
+    "version_note": "2024首版arXiv；2025在线正式发表/作者代码名IJRR2025；2026卷45(1):60-79，文献年份采用卷期2026。",
+    "metadata_source": "https://repository.tudelft.nl/file/File_2ca20645-32cf-41ee-be34-04281c24cb38?preview=1"
+  },
+  {
+    "id": "chandra2026socialminigames",
+    "title": "Multi-robot navigation in social mini-games: definitions, taxonomy, and algorithms",
+    "authors": [
+      "Rohan Chandra",
+      "Shubham Singh",
+      "Wenhao Luo",
+      "Katia Sycara"
+    ],
+    "year": 2026,
+    "url": "https://doi.org/10.1007/s10514-026-10251-w",
+    "track": "physics_social_dynamics",
+    "method": "约束空间强耦合互动的定义、方法分类和评价框架。",
+    "evidence": [
+      {
+        "url": "https://link.springer.com/article/10.1007/s10514-026-10251-w",
+        "section": "§2.1-2.5; §3-4",
+        "finding": "区分局部安全与活性，按合作/通信/可观测性等假设分类；门口、走廊、交叉点需要协调，轨迹预测精度不能代替此检验。"
+      }
+    ],
+    "limitations": "综述不是新控制器的性能证明；多机器人协议不能直接假设人类服从。",
+    "transfer": "用于三baseline失败分层：安全但停住/反复让行/强迫别人让行分别记录；DPed-VLN还要保持指令目标正确。",
+    "pilot": "构造三类固定种子微场景，报告安全、到达、停滞、对其他agent干扰及观察权限；这是任何权重编辑前置诊断。",
+    "priority": "high",
+    "verification_status": "primary_fulltext_verified",
+    "retrieved_at": "2026-11-03",
+    "correction_check": "Consulted landing pages showed no withdrawal/correction notice; no exhaustive Crossmark or retraction-database audit.",
+    "doi": "10.1007/s10514-026-10251-w",
+    "arxiv_id": "2508.13459",
+    "venue": "Autonomous Robots",
+    "volume": "50",
+    "article_number": "20",
+    "publication_date": "2026-04-11",
+    "version_note": "正式版4作者；arXiv早期索引列6作者，采用出版社正式版，不混拼作者表；版本关系由作者项目页支持。",
+    "project_url": "https://socialminigames.github.io/"
+  },
+  {
+    "id": "kang2026compass",
+    "title": "COMPASS: Temporally Consistent Topological Passing Decisions for Socially Aware Robot Navigation",
+    "authors": [
+      "Jungmo Kang"
+    ],
+    "year": 2026,
+    "url": "https://www.preprints.org/manuscript/202610.0120",
+    "track": "physics_social_dynamics",
+    "method": "以泄漏证据累积器管理通过侧承诺，安全仲裁优先于模式惯性。",
+    "evidence": [
+      {
+        "url": "https://www.preprints.org/manuscript/202610.0120",
+        "section": "§2; §3.1-3.5; §4-5",
+        "finding": "作者明确将CUSUM式累积、切换界限和安全优先视为已有机制；当前测量仅离线decision-core与内部对照，未做外部planner/闭环/人评。"
+      }
+    ],
+    "limitations": "未同行评审；track-ID类生命周期仅部分实现；离线反复选择次数减少不能推为机器人碰撞减少；默认简单dwell也是强对照。",
+    "transfer": "否定“模式记忆+风险释放本身就是新贡献”的笼统说法。可研究受感知不确定性影响的模式记忆是否可安全蒸馏到冻结导航policy，但必须测可表示性及闭环。",
+    "pilot": "模式选择baseline至少含SHINE式前类代价、固定dwell、COMPASS式累积器；比较同等延迟/误报约束下的噪声抖动、遮挡ID切换、风险突变和导航成功。",
+    "priority": "novelty_blocker",
+    "verification_status": "primary_fulltext_verified",
+    "peer_reviewed": false,
+    "venue": "Preprints.org",
+    "version": "v1",
+    "publication_date": "2026-10-02",
+    "retrieved_at": "2026-11-03",
+    "code_url": "https://github.com/kjungmo/compass",
+    "correction_check": "Landing page labels v1 as latest and not peer-reviewed; no correction notice observed."
+  }
+]

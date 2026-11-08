@@ -1,0 +1,105 @@
+TY  - JOUR
+ID  - hu2026navthinker
+TI  - NavThinker: Action-Conditioned World Models for Coupled Prediction and Planning in Social Navigation
+AU  - Tianshuai Hu
+AU  - Zeying Gong
+AU  - Lingdong Kong
+AU  - XiaoDong Mei
+AU  - Yiyi Ding
+AU  - Qi Zeng
+AU  - Ao Liang
+AU  - Rong Li
+AU  - Yangyi Zhong
+AU  - Junwei Liang
+PY  - 2026
+JO  - arXiv
+UR  - https://arxiv.org/html/2603.15359v2
+ER  -
+
+TY  - JOUR
+ID  - gong2024falcon
+TI  - From Cognition to Precognition: A Future-Aware Framework for Social Navigation
+AU  - Zeying Gong
+AU  - Tianshuai Hu
+AU  - Ronghe Qiu
+AU  - Junwei Liang
+PY  - 2024
+JO  - arXiv version consulted
+UR  - https://arxiv.org/html/2409.13244v2
+ER  -
+
+TY  - JOUR
+ID  - nguyen2026peds
+TI  - PEDS: Closed-Loop Benchmarking of Social Navigation across Pedestrian Behavior Models
+AU  - Duc Tai Nguyen
+AU  - Volodymyr Shcherbyna
+AU  - Anh Do Duc
+AU  - Zhengcheng Shen
+AU  - Linh Kästner
+PY  - 2026
+JO  - IEEE Robotics and Automation Letters; accepted October2026 per PDF
+UR  - https://arena-rosnav.org/pedsral26/static/pdfs/PEDS_RAL2026.pdf
+ER  -
+
+TY  - JOUR
+ID  - martinez2025shine
+TI  - SHINE: Social Homology Identification for Navigation in Crowded Environments
+AU  - Diego Martinez-Baselga
+AU  - Oscar de Groot
+AU  - Luzia Knoedler
+AU  - Luis Riazuelo
+AU  - Javier Alonso-Mora
+AU  - Luis Montano
+PY  - 2025
+JO  - The International Journal of Robotics Research
+UR  - https://arxiv.org/html/2404.16705
+DO  - 10.1177/02783649251344639
+ER  -
+
+TY  - JOUR
+ID  - xue2026mmpmcbf
+TI  - Proactive Local-Minima-Free Robot Navigation: Blending Motion Prediction with Safe Control
+AU  - Yifan Xue
+AU  - Ze Zhang
+AU  - Knut Åkesson
+AU  - Nadia Figueroa
+PY  - 2026
+JO  - IEEE Robotics and Automation Letters
+UR  - https://arxiv.org/html/2601.10233
+ER  -
+
+TY  - JOUR
+ID  - hu2026oanbv
+TI  - OA-NBV: Occlusion-Aware Next-Best-View Planning for Human-Centered Active Perception on Mobile Robots
+AU  - Boxun Hu
+AU  - Chang Chang
+AU  - Jiawei Ge
+AU  - Man Namgung
+AU  - Xiaomin Lin
+AU  - Axel Krieger
+AU  - Tinoosh Mohsenin
+PY  - 2026
+JO  - arXiv
+UR  - https://arxiv.org/html/2603.11072
+ER  -
+
+TY  - JOUR
+ID  - wang2026coopuq
+TI  - CoopUQ: Robust Multi-Robot Social Navigation via Uncertainty-Aware Cooperative Forecasting
+AU  - Zehao Wang
+AU  - Jianpeng Yao
+AU  - Yuping Wang
+AU  - Yiping Li
+AU  - Jiaqi Li
+AU  - Zhixu Li
+AU  - Kanghoon Lee
+AU  - Jinfeng Wang
+AU  - Cong Liu
+AU  - Zhaowei Tan
+AU  - Jinkyoo Park
+AU  - Jiachen Li
+PY  - 2026
+JO  - CoRL2026 per author project page
+UR  - https://arxiv.org/html/2610.26852
+ER  -
+

@@ -1,0 +1,27 @@
+search_cutoff: 2026-11-08
+scope: targeted headroom screening, not exhaustive SOTA audit
+problems:
+  - id: recoverable_collision
+    support: [local174_collision71_of77, xue2026mmpmcbf]
+    counterevidence: [xue2026mmpmcbf]
+    status: insufficient_evidence
+    reason: Local collision failure is observed; its recoverable portion and causes have not been measured.
+    next: Matched perception, prediction and legal-controller interventions before collision.
+  - id: pedestrian_model_shift
+    support: [nguyen2026peds]
+    counterevidence: [nguyen2026peds]
+    status: unresolved
+    reason: Dense-policy results vary substantially; best controllers are more robust and difficulty also varies.
+    next: Behavior-oracle versus history-identifiable adaptation under held-out driver families.
+  - id: active_information
+    support: [wang2026coopuq]
+    counterevidence: [wang2026coopuq, hu2026oanbv]
+    status: partially_solved
+    reason: Cooperation and immediate viewpoint selection already improve their own tasks; single-agent decision-valued information acquisition needs comparable evaluation.
+    next: Same-sensor legal probe versus full-view diagnostic oracle and strong recurrent baseline.
+  - id: multirobot_ordering
+    support: [hu2026navthinker]
+    counterevidence: [martinez2025shine, wang2026coopuq]
+    status: insufficient_evidence
+    reason: Low team success does not isolate coordination loss; competing work uses different sensing/communication.
+    next: Hold task and information fixed while changing only feasible passage ordering.

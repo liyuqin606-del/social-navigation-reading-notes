@@ -1,0 +1,66 @@
+[
+  {
+    "source": "web search (discovery; primary sources checked separately)",
+    "date": "2026-11-03",
+    "queries": [
+      "\"world model\" navigation 2025 2026 latent social navigation",
+      "\"DINO-WM\" \"TD-MPC2\"",
+      "\"V-JEPA 2\" world model paper",
+      "\"Value Equivalence Principle\" model based reinforcement learning"
+    ],
+    "result_items": 40,
+    "error": null,
+    "count_semantics": "Returned source items in combined batch, not database total or deduplicated papers; replay for count logging."
+  },
+  {
+    "source": "web search (discovery; primary sources checked separately)",
+    "date": "2026-11-03",
+    "queries": [
+      "\"Social-WM\" \"Safety-Aware\"",
+      "\"world model\" \"navigation\" \"2026\" arxiv planning",
+      "\"DINO-WM\" arxiv",
+      "\"TD-MPC2\" arxiv"
+    ],
+    "result_items": 25,
+    "error": null,
+    "count_semantics": "Returned source items in combined batch, not database total or deduplicated papers; replay for count logging."
+  },
+  {
+    "source": "web search (discovery; primary sources checked separately)",
+    "date": "2026-11-03",
+    "queries": [
+      "DreamerV3 Mastering diverse control tasks through world models 2301.04104",
+      "\"LeWorldModel\" Stable End-to-End Joint-Embedding Predictive Architecture Pixels arxiv",
+      "\"DreamerNav\" world model arxiv",
+      "\"NavWM\" world model arxiv"
+    ],
+    "result_items": 34,
+    "error": null,
+    "count_semantics": "Returned source items in combined batch, not database total or deduplicated papers; replay for count logging."
+  },
+  {
+    "source": "web search (discovery; primary sources checked separately)",
+    "date": "2026-11-03",
+    "queries": [
+      "\"DreamerNav\" \"world models\" authors Frontiers",
+      "\"Hidden Failure Modes in Latent World-Model Planning from Offline Data\" arxiv",
+      "\"LeWorldModel\" \"single\" \"GPU\" A100",
+      "\"V-JEPA 2\" \"Mido Assran\" arxiv 2506.09985"
+    ],
+    "result_items": 21,
+    "error": null,
+    "count_semantics": "Returned source items in combined batch, not database total or deduplicated papers; replay for count logging."
+  },
+  {
+    "source": "web search",
+    "date": "2026-11-03",
+    "queries": [
+      "\"Social-WM\" \"NavThinker\" limitations",
+      "\"world model\" navigation latent \"failure\" \"2026\"",
+      "\"Navigation World Models\" \"retraction\" OR \"withdrawn\"",
+      "\"DINO-WM\" \"correction\" OR \"withdrawn\""
+    ],
+    "result_items": 21,
+    "count_semantics": "Returned source items in combined batch."
+  }
+]

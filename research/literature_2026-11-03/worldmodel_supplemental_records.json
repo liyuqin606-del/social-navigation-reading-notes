@@ -1,0 +1,127 @@
+[
+  {
+    "id": "wm_one_step_nwm",
+    "short_name": "one_step_nwm",
+    "title": "An Efficient and Multi-Modal Navigation System with One-Step World Model",
+    "authors": [
+      "Shen, Wangtian",
+      "Meng, Ziyang",
+      "Ma, Jinming",
+      "Zhou, Mingliang",
+      "Xiang, Diyun"
+    ],
+    "authors_format": "family, given",
+    "year": 2026,
+    "first_published": "2026-01-18",
+    "latest_revision_date": "2026-01-18",
+    "arxiv_id": "2601.12277",
+    "version_reviewed": "v1",
+    "url": "https://arxiv.org/abs/2601.12277",
+    "fulltext_url": "https://arxiv.org/html/2601.12277v1",
+    "track": "worldmodel",
+    "method": "shortcut目标+时空注意力3D U-Net并行预测多帧；固定速度锚点初始化多模态目标规划。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2601.12277v1",
+        "section": "§3.1–3.4; §4.1–4.2",
+        "finding": "降低逐帧生成的推理开销；方法将两小步教师速度合成大步训练。"
+      }
+    ],
+    "limitations": "场景数据每场景独立训练；文中175M模型速度在H200测量，不能外推单3090或未见场景社交导航。",
+    "transfer": "推断：适合借用少候选锚点和并行短时域，暂不复现完整像素生成器。",
+    "pilot": "在已有actor上选4–8个可解释动作chunk，比较随机和锚点候选；候选相同再比较WM打分。",
+    "priority": "B",
+    "compute": "§4.2：175M，H200 batch1预测11未来帧0.076s；这不是整个规划器延迟。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2601.12277",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint",
+    "screening_status": "supplemental_verified_not_in_main14"
+  },
+  {
+    "id": "wm_navwm",
+    "short_name": "navwm",
+    "title": "NavWM: A Unified Navigation World Model for Foresight-Driven Planning",
+    "authors": [
+      "Mei, Yanghong",
+      "Guo, Longteng",
+      "Yu, Ming-Ming",
+      "Zhao, Guiyu",
+      "He, Xingjian",
+      "Liu, Jing"
+    ],
+    "authors_format": "family, given",
+    "year": 2026,
+    "first_published": "2026-06-23",
+    "latest_revision_date": "2026-06-23",
+    "arxiv_id": "2606.24101",
+    "version_reviewed": "v1",
+    "url": "https://arxiv.org/abs/2606.24101",
+    "fulltext_url": "https://arxiv.org/html/2606.24101v1",
+    "track": "worldmodel",
+    "method": "共享Mamba表征联合几何/语义、锚点多轨迹、未来视频；第二阶段用预测动作训练视觉分支。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2606.24101v1",
+        "section": "§3.2–3.6; §4.1.3",
+        "finding": "几何由DA-V2、语义由SAM伪标签蒸馏；多任务不确定性加权；训练/推理动作分布对齐。"
+      }
+    ],
+    "limitations": "深度/语义伪标签与传感器条件需公平；1.5B模型和多GPU训练不符合当前首个低预算pilot。",
+    "transfer": "推断：借鉴候选多样性与训练动作分布匹配；联合三个大模块不是当前最佳起点。",
+    "pilot": "在同一冻结表征下比较单候选/多锚点，保持总rollout数与时域一致；先测是否减少互让僵局。",
+    "priority": "C",
+    "compute": "§4.1.3：1.5B，8×A100，100k+50k训练步。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2606.24101",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint",
+    "screening_status": "supplemental_verified_not_in_main14"
+  },
+  {
+    "id": "wm_execution_gap",
+    "short_name": "execution_gap",
+    "title": "Mind the Execution Gap: Action-Semantic Mismatch in World-Model Control",
+    "authors": [
+      "Wen, Shengtao",
+      "Chen, Xiang",
+      "Tian, Yu",
+      "Guo, Lingbing",
+      "Gong, Lina",
+      "Huang, Sheng-Jun"
+    ],
+    "authors_format": "family, given",
+    "year": 2026,
+    "first_published": "2026-10-05",
+    "latest_revision_date": "2026-10-05",
+    "arxiv_id": "2610.06582",
+    "version_reviewed": "v1",
+    "url": "https://arxiv.org/abs/2610.06582",
+    "fulltext_url": "https://arxiv.org/html/2610.06582v1",
+    "track": "worldmodel",
+    "method": "区分规划未来动作时间线与循环模型上一动作归因，使用执行一致接口修复异步失配。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2610.06582v1",
+        "section": "§2; §3; Appendix C–E",
+        "finding": "TD-MPC2的未来序列接口与Dreamer的已执行动作反馈作用位置不同，模型部署权重保持冻结。"
+      }
+    ],
+    "limitations": "主要针对异步通信/执行；Habitat同步基准若无该失配，不应凭空加延迟制造主实验收益。",
+    "transfer": "推断：先审计动作、时间戳、碰撞后实际位移和reset；属于应先做的实现检查，不能冒充权重创新。",
+    "pilot": "记录commanded/applied actions，对随机延迟作独立压力测试；同步条件无差异则不作为主方向。",
+    "priority": "B",
+    "compute": "接口修复无需重训；需修改日志/执行层而非GPU大训练。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2610.06582",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint",
+    "screening_status": "supplemental_verified_not_in_main14"
+  }
+]

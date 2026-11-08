@@ -1,0 +1,612 @@
+[
+  {
+    "id": "wm_value_equivalence",
+    "short_name": "value_equivalence",
+    "title": "The Value Equivalence Principle for Model-Based Reinforcement Learning",
+    "authors": [
+      "Grimm, Christopher",
+      "Barreto, André",
+      "Singh, Satinder",
+      "Silver, David"
+    ],
+    "authors_format": "family, given",
+    "year": 2020,
+    "first_published": "2020-11-06",
+    "latest_revision_date": "2020-11-06",
+    "arxiv_id": "2011.03506",
+    "version_reviewed": "v1",
+    "url": "https://arxiv.org/abs/2011.03506",
+    "fulltext_url": "https://arxiv.org/html/2011.03506v1",
+    "track": "worldmodel",
+    "method": "针对策略族Π与价值函数族V，要求模型产生相同Bellman更新；不必拟合全部转移细节。",
+    "evidence": [
+      {
+        "url": "https://proceedings.neurips.cc/paper/2020/file/3bb585ea00014b0e3ebe4c6dd165a358-Paper.pdf",
+        "section": "§3 Definitions 1–2, §3.1–3.2",
+        "finding": "给定策略/函数集，价值等价模型可拥有更简单表征；扩大集合会收缩可接受模型空间。"
+      }
+    ],
+    "limitations": "理论依赖指定函数和策略集合；平均回报等价不自动保证罕见碰撞尾风险、分布外行为或POMDP信念正确。",
+    "transfer": "推断：NavThinker预测空间应保留进度与碰撞代价的决策差异，加入多成本Bellman目标，而非只压低latent MSE。",
+    "pilot": "冻结表征训练小动力学与多成本头；同一候选集比较MSE训练和价值/风险加权训练，测行动排序及闭环风险；若MSE下降而排序不改善则停止。",
+    "priority": "A",
+    "compute": "理论与小头实验；无新基础模型预训练需求",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2011.03506",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint",
+    "formal_publication": {
+      "venue": "NeurIPS",
+      "year": 2020,
+      "url": "https://proceedings.neurips.cc/paper/2020/file/3bb585ea00014b0e3ebe4c6dd165a358-Paper.pdf"
+    }
+  },
+  {
+    "id": "wm_dreamerv3",
+    "short_name": "dreamerv3",
+    "title": "Mastering Diverse Domains through World Models",
+    "authors": [
+      "Hafner, Danijar",
+      "Pasukonis, Jurgis",
+      "Ba, Jimmy",
+      "Lillicrap, Timothy"
+    ],
+    "authors_format": "family, given",
+    "year": 2023,
+    "first_published": "2023-01-10",
+    "latest_revision_date": "2024-04-17",
+    "arxiv_id": "2301.04104",
+    "version_reviewed": "v2",
+    "url": "https://arxiv.org/abs/2301.04104",
+    "fulltext_url": "https://arxiv.org/html/2301.04104v2",
+    "track": "worldmodel",
+    "method": "循环随机状态空间模型学习动态，actor/critic在想象轨迹中训练；在线采样actor而非每步搜索。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2301.04104v2",
+        "section": "Learning algorithm; World model learning; Critic learning",
+        "finding": "潜在状态包含循环记忆与随机部分；行为学习用预测奖励和延续概率，带价值自举。"
+      }
+    ],
+    "limitations": "这是整个RL算法，不是给Falcon加一个预测头即可复现；需要交互数据和训练，可能利用模型误差。",
+    "transfer": "推断：值得借鉴信念记忆与短想象+价值尾项；不优先替换现有已训练Falcon全栈。",
+    "pilot": "保持原actor，用小头预测未来风险与进度；先检验冻结记忆是否能预测遮挡后行人，再考虑想象更新。",
+    "priority": "B",
+    "compute": "原文规模不能直接当单3090预算；本次只建议小头诊断。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2301.04104",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint",
+    "formal_publication": {
+      "venue": "Nature",
+      "year": 2025,
+      "title": "Mastering diverse control tasks through world models",
+      "doi": "10.1038/s41586-025-08744-2",
+      "verification": "官方搜索元数据已核，Nature全文跳转失败，方法依据arXiv v2"
+    }
+  },
+  {
+    "id": "wm_tdmpc2",
+    "short_name": "tdmpc2",
+    "title": "TD-MPC2: Scalable, Robust World Models for Continuous Control",
+    "authors": [
+      "Hansen, Nicklas",
+      "Su, Hao",
+      "Wang, Xiaolong"
+    ],
+    "authors_format": "family, given",
+    "year": 2023,
+    "first_published": "2023-10-25",
+    "latest_revision_date": "2024-03-21",
+    "arxiv_id": "2310.16828",
+    "version_reviewed": "v2",
+    "url": "https://arxiv.org/abs/2310.16828",
+    "fulltext_url": "https://arxiv.org/html/2310.16828v2",
+    "track": "worldmodel",
+    "method": "联合学习潜在动态、奖励和价值，以策略先验引导短视MPC并用终端Q补足时域。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2310.16828v2",
+        "section": "§3.1–3.2; Appendix I",
+        "finding": "隐式无解码世界模型以嵌入一致性、奖励预测和TD价值目标训练；论文附录讨论离散动作扩展。"
+      }
+    ],
+    "limitations": "主体实验为连续控制；潜在Q在规划分布偏移下可能高估，不能据其104任务表现推断社会导航优势。",
+    "transfer": "推断：适合四离散动作的小候选树+终端价值；比大视频生成更符合低预算。",
+    "pilot": "1/2/4步固定候选预算比较纯即时风险、累积风险、终端价值；报告错误排序与耗时，防止延长时域只放大偏差。",
+    "priority": "A",
+    "compute": "选择小模型/缓存表征；317M多任务版本非本项目直接复现目标。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2310.16828",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint",
+    "formal_publication": {
+      "venue": "ICLR",
+      "year": 2024,
+      "url": "https://iclr.cc/media/iclr-2024/Slides/18722.pdf"
+    }
+  },
+  {
+    "id": "wm_dino_wm",
+    "short_name": "dino_wm",
+    "title": "DINO-WM: World Models on Pre-trained Visual Features enable Zero-shot Planning",
+    "authors": [
+      "Zhou, Gaoyue",
+      "Pan, Hengkai",
+      "LeCun, Yann",
+      "Pinto, Lerrel"
+    ],
+    "authors_format": "family, given",
+    "year": 2024,
+    "first_published": "2024-11-07",
+    "latest_revision_date": "2025-02-01",
+    "arxiv_id": "2411.04983",
+    "version_reviewed": "v2",
+    "url": "https://arxiv.org/abs/2411.04983",
+    "fulltext_url": "https://arxiv.org/html/2411.04983v2",
+    "track": "worldmodel",
+    "method": "冻结DINOv2空间patch特征，学习动作条件未来特征；无需像素解码，CEM寻找达到图像目标的动作。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2411.04983v2",
+        "section": "§3.1–3.2; Appendix A.5",
+        "finding": "编码器冻结、因果动态预测、latent目标距离用于规划；解码器只供可视化。"
+      }
+    ],
+    "limitations": "基准不等同拥挤人群导航；图像目标的latent近不保证可达，离线动作覆盖和规划器影响结果。",
+    "transfer": "推断：冻结小编码器并缓存特征是可复用实现骨架；需要另学对碰撞/进度敏感的代价。",
+    "pilot": "用相同缓存特征比较DINO patch/池化特征在距离、碰撞、候选排序上的线性probe；仅特征MSE提升不继续。",
+    "priority": "A",
+    "compute": "避免整套大模型训练；作者项目 https://dino-wm.github.io/，仓库执行/权重未核。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2411.04983",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint"
+  },
+  {
+    "id": "wm_vjepa2",
+    "short_name": "vjepa2",
+    "title": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning",
+    "authors": [
+      "Assran, Mahmoud",
+      "Bardes, Adrien",
+      "Fan, David",
+      "Garrido, Quentin",
+      "Howes, Russell",
+      "Komeili, Mojtaba",
+      "Muckley, Matthew",
+      "Rizvi, Ammar",
+      "Roberts, Claire",
+      "Sinha, Koustuv",
+      "Zholus, Artem",
+      "Arnaud, Sergio",
+      "Gejji, Abha",
+      "Martin, Ada",
+      "Hogan, Francois Robert",
+      "Dugas, Daniel",
+      "Bojanowski, Piotr",
+      "Khalidov, Vasil",
+      "Labatut, Patrick",
+      "Massa, Francisco",
+      "Szafraniec, Marc",
+      "Krishnakumar, Kapil",
+      "Li, Yong",
+      "Ma, Xiaodong",
+      "Chandar, Sarath",
+      "Meier, Franziska",
+      "LeCun, Yann",
+      "Rabbat, Michael",
+      "Ballas, Nicolas"
+    ],
+    "authors_format": "family, given",
+    "year": 2025,
+    "first_published": "2025-06-11",
+    "latest_revision_date": "2025-06-11",
+    "arxiv_id": "2506.09985",
+    "version_reviewed": "v1",
+    "url": "https://arxiv.org/abs/2506.09985",
+    "fulltext_url": "https://arxiv.org/html/2506.09985v1",
+    "track": "worldmodel",
+    "method": "在视频自监督编码器之上训练动作条件预测器，以teacher forcing和短rollout损失支持latent MPC。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2506.09985v1",
+        "section": "§3.1; §4.3; Table 3",
+        "finding": "冻结编码器后用带末端状态的DROID视频训练；原控制证据是固定外部摄像头的Franka机械臂。"
+      }
+    ],
+    "limitations": "不能把动作无关视频表征等同可控因果模型；相机布局敏感、长时滚动误差、原MPC每动作16秒。",
+    "transfer": "推断：借用短rollout损失，不直接移植大规模机械臂模型到实时行人导航。",
+    "pilot": "固定导航编码器，只训练动作适配层；比较teacher forcing与2步自回归潜在rollout，再测试动作打乱是否显著恶化。",
+    "priority": "B",
+    "compute": "原Table3：单RTX4090、800样本×10迭代、时域1，16秒/动作；不是3090实时方案。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2506.09985",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint",
+    "metadata_note": "作者以正文名单为准；摘要索引用Mido Assran且误将Mojtaba Komeili拆为两名，已据正文合并，不按错误索引原样生成作者。"
+  },
+  {
+    "id": "wm_nwm",
+    "short_name": "nwm",
+    "title": "Navigation World Models",
+    "authors": [
+      "Bar, Amir",
+      "Zhou, Gaoyue",
+      "Tran, Danny",
+      "Darrell, Trevor",
+      "LeCun, Yann"
+    ],
+    "authors_format": "family, given",
+    "year": 2024,
+    "first_published": "2024-12-04",
+    "latest_revision_date": "2025-04-11",
+    "arxiv_id": "2412.03572",
+    "version_reviewed": "v2",
+    "url": "https://arxiv.org/abs/2412.03572",
+    "fulltext_url": "https://arxiv.org/html/2412.03572v2",
+    "track": "worldmodel",
+    "method": "动作条件扩散视频模型可生成/筛选导航候选，使用连续平移、偏航与时间条件。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2412.03572v2",
+        "section": "§3.1–3.3; §5 Limitations",
+        "finding": "作者明确指出未知环境模式坍缩与行人时间动态模拟困难。"
+      }
+    ],
+    "limitations": "生成逼真不保证动作执行准确或行人响应正确；大候选搜索代价高，不能拿视频指标当闭环安全。",
+    "transfer": "推断：用它定义动作敏感性与动态交互的反例测试，而非从头训练十亿参数模型。",
+    "pilot": "固定图像与行人初态，仅改机器人动作，检查预测是否区分停止/前进；再固定机器人动作改变行人时间相位。",
+    "priority": "B",
+    "compute": "模型可至1B；本次无完整训练预算核算，建议仅方法借鉴。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2412.03572",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint"
+  },
+  {
+    "id": "wm_social_wm",
+    "short_name": "social_wm",
+    "title": "Social-WM: Safety-Aware Latent World Models for Robot Social Navigation",
+    "authors": [
+      "Zheng, Zhihao",
+      "Chuah, Mooi Choo"
+    ],
+    "authors_format": "family, given",
+    "year": 2026,
+    "first_published": "2026-09-30",
+    "latest_revision_date": "2026-10-01",
+    "arxiv_id": "2609.40177",
+    "version_reviewed": "v2",
+    "url": "https://arxiv.org/abs/2609.40177",
+    "fulltext_url": "https://arxiv.org/html/2609.40177v2",
+    "track": "worldmodel",
+    "method": "冻结DINOv2-small；latent未来+可实现动作逆动力学，按命令与预计实际位移差筛选候选。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2609.40177v2",
+        "section": "§III-A–F; §IV-B,H–J",
+        "finding": "直接比较Falcon/NavThinker；数据采集用keep-out gate，连续R3动作；作者报告持续阻挡造成超时。"
+      }
+    ],
+    "limitations": "名义动作差不等于普遍安全证书；安全标签受gate构造影响，与Falcon四动作协议需重核。",
+    "transfer": "推断：最直接重叠，不能把可执行性筛选当新贡献；可研究校准与持续阻挡后的重规划。",
+    "pilot": "同传感器/四动作/场景审计后，比较恒定阈值与风险校准；分别审计采集期keep-out gate与部署期学习筛选；若另加真值测试gate，单独消融，匹配SR同时考察碰撞/超时。",
+    "priority": "A",
+    "compute": "§IV-I：58M总参数，A5000上CVAE规划51ms/步；本机/3090尚未测量。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2609.40177",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint"
+  },
+  {
+    "id": "wm_mwm",
+    "short_name": "mwm",
+    "title": "MWM: Mobile World Models for Action-Conditioned Consistent Prediction",
+    "authors": [
+      "Yan, Han",
+      "Xiang, Zishang",
+      "Zhang, Zeyu",
+      "Tang, Hao"
+    ],
+    "authors_format": "family, given",
+    "year": 2026,
+    "first_published": "2026-03-08",
+    "latest_revision_date": "2026-03-08",
+    "arxiv_id": "2603.07799",
+    "version_reviewed": "v1",
+    "url": "https://arxiv.org/abs/2603.07799",
+    "fulltext_url": "https://arxiv.org/html/2603.07799v1",
+    "track": "worldmodel",
+    "method": "通过自身滚动上下文改善动作条件一致性；冻结CDiT主干，仅更新动作注入AdaLN，并做推理一致蒸馏。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2603.07799v1",
+        "section": "§III-B.2–C; Tables III–IV",
+        "finding": "ACC明确只优化AdaLN；强调多步执行轨迹匹配，而非单帧美观。"
+      }
+    ],
+    "limitations": "只改动作调制层已是已有工作；视频生成速度在RTX PRO6000测量，未证明3090实时；SCAND离线误差不是社会安全。",
+    "transfer": "推断：若选编辑WM权重，动作嵌入/AdaLN优先于盲目编辑任意MLP，但需保留语义与离线动作覆盖。",
+    "pilot": "针对NavThinker实际动作条件模块，做相同参数量随机层/动作层/输出logit校正控制；只以闭环改善决定去留。",
+    "priority": "A",
+    "compute": "表III：MWM DDIM5平均rollout2.3s，NWM DDIM25为9.6s；硬件RTX PRO6000。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2603.07799",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint"
+  },
+  {
+    "id": "wm_leworldmodel",
+    "short_name": "leworldmodel",
+    "title": "LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels",
+    "authors": [
+      "Maes, Lucas",
+      "Le Lidec, Quentin",
+      "Scieur, Damien",
+      "LeCun, Yann",
+      "Balestriero, Randall"
+    ],
+    "authors_format": "family, given",
+    "year": 2026,
+    "first_published": "2026-03-13",
+    "latest_revision_date": "2026-06-03",
+    "arxiv_id": "2603.19312",
+    "version_reviewed": "v3",
+    "url": "https://arxiv.org/abs/2603.19312",
+    "fulltext_url": "https://arxiv.org/html/2603.19312v3",
+    "track": "worldmodel",
+    "method": "小型端到端JEPA以next-latent MSE+SIGReg防塌缩；动作通过AdaLN注入，CEM规划。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2603.19312v3",
+        "section": "§3.1–3.2; §6 Limitations; Appendix D",
+        "finding": "SIGReg用随机投影的一维正态性检验约束联合嵌入，避免常量解。"
+      }
+    ],
+    "limitations": "防塌缩不等于社会几何足够；论文指出低维低多样数据困难、离线覆盖和短时域限制。",
+    "transfer": "推断：适合作低成本玩具反例与目标设计试验；不据其物理probe直接声称学会人的意图。",
+    "pilot": "先TwoRoom或小导航数据对比MSE+防塌缩与风险目标；检查可达性误排序和转移，随后再接Falcon。",
+    "priority": "B",
+    "compute": "v1 Appendix D报告单L40S；v3架构约5M编码器+10M预测器；不能保证3090同耗时。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2603.19312",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint",
+    "metadata_correction": {
+      "field": "authors",
+      "original": [
+        "Maes, Lucas",
+        "Lidec, Quentin Le",
+        "Scieur, Damien",
+        "LeCun, Yann",
+        "Balestriero, Randall"
+      ],
+      "corrected": [
+        "Maes, Lucas",
+        "Le Lidec, Quentin",
+        "Scieur, Damien",
+        "LeCun, Yann",
+        "Balestriero, Randall"
+      ],
+      "reason": "independent QA of full author name Quentin Le Lidec; preserve compound family name"
+    }
+  },
+  {
+    "id": "wm_tdmpc_policy_constraint",
+    "short_name": "tdmpc_policy_constraint",
+    "title": "TD-M(PC)$^2$: Improving Temporal Difference MPC Through Policy Constraint",
+    "authors": [
+      "Lin, Haotian",
+      "Wang, Pengcheng",
+      "Schneider, Jeff",
+      "Shi, Guanya"
+    ],
+    "authors_format": "family, given",
+    "year": 2025,
+    "first_published": "2025-02-05",
+    "latest_revision_date": "2025-02-05",
+    "arxiv_id": "2502.03550",
+    "version_reviewed": "v1",
+    "url": "https://arxiv.org/abs/2502.03550",
+    "fulltext_url": "https://arxiv.org/html/2502.03550v1",
+    "track": "worldmodel",
+    "method": "用行为分布log-likelihood约束策略更新，限制规划器与学习先验分布失配导致的价值高估。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2502.03550v1",
+        "section": "§4; §5.1–5.2, Eq.10",
+        "finding": "actor目标新增行为分布项；论文在高自由度控制中报告缓解持续高估。"
+      }
+    ],
+    "limitations": "不是Falcon PPO直接可插入项；过强早期约束抑制探索，需有行为分布估计与价值学习。",
+    "transfer": "推断：给编辑/重排序加KL或动作支持约束，避免WM从数据外虚假未来套利。",
+    "pilot": "在候选重新打分时加入对原actor的KL预算；比较同预算无约束、常数温度与低秩编辑；报告分布外失败。",
+    "priority": "A",
+    "compute": "作者称最小实现改动；迁移至本任务仍需设计，非已验证免算力提升。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2502.03550",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint",
+    "formal_publication": {
+      "venue": "L4DC",
+      "year": 2026,
+      "url": "https://darthutopian.github.io/tdmpc_square/"
+    }
+  },
+  {
+    "id": "wm_vjepa21",
+    "short_name": "vjepa21",
+    "title": "V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning",
+    "authors": [
+      "Mur-Labadia, Lorenzo",
+      "Muckley, Matthew",
+      "Bar, Amir",
+      "Assran, Mido",
+      "Sinha, Koustuv",
+      "Rabbat, Mike",
+      "LeCun, Yann",
+      "Ballas, Nicolas",
+      "Bardes, Adrien"
+    ],
+    "authors_format": "family, given",
+    "year": 2026,
+    "first_published": "2026-03-15",
+    "latest_revision_date": "2026-06-11",
+    "arxiv_id": "2603.14482",
+    "version_reviewed": "v3",
+    "url": "https://arxiv.org/abs/2603.14482",
+    "fulltext_url": "https://arxiv.org/html/2603.14482v3",
+    "track": "worldmodel",
+    "method": "对可见和掩码token均监督、跨中间层监督改善稠密空间表征；冻结特征训练动作条件导航模型。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2603.14482v3",
+        "section": "§2.3; §3.4 Table 7",
+        "finding": "导航实验是2秒轨迹的open-loop规划，非闭环社会导航；CDiT预测干净表征并用DDIM降低高维噪声偏离。"
+      }
+    ],
+    "limitations": "不能将ATE或10倍加速当碰撞改善；报告规划仍10.6秒，且1B/2B与蒸馏版能力不能混用。",
+    "transfer": "推断：优先用已发布小特征做离线probe比较，验证碰撞几何/动作差异保留后才替换编码器。",
+    "pilot": "相同头、相同帧和预算比较DINOv2、DA-V2与可取得的V-JEPA蒸馏特征；只报告实际核验的权重与配置。",
+    "priority": "B",
+    "compute": "§3.4：480候选、8去噪步、约10.6秒规划；论文称发布80M/300M蒸馏编码器，实际文件未下载核验。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2603.14482",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint"
+  },
+  {
+    "id": "wm_clwm",
+    "short_name": "clwm",
+    "title": "Learning Counterfactual World Models for Embodied Reasoning under Partial Observability",
+    "authors": [
+      "Zhou, Todd Y.",
+      "Zhang, Daniel"
+    ],
+    "authors_format": "family, given",
+    "year": 2026,
+    "first_published": "2026-09-05",
+    "latest_revision_date": "2026-10-25",
+    "arxiv_id": "2609.05834",
+    "version_reviewed": "v2",
+    "url": "https://arxiv.org/abs/2609.05834",
+    "fulltext_url": "https://arxiv.org/html/2609.05834v2",
+    "track": "worldmodel",
+    "method": "在循环信念状态上构造同锚点动作干预，用结果标签、知觉混淆和价值分歧挖掘难负例，学习反事实可分性。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2609.05834v2",
+        "section": "§2; §4.1–4.5; §8",
+        "finding": "明确不声称因果结构可识别；相同初始历史的开放环候选后果区分已是其主方法，非仅感知重建。"
+      }
+    ],
+    "limitations": "需要干预结果标签；实验为从头训练的模型，未验证大规模预训练编码器或真实人类社会行为；相关性不是因果证明。",
+    "transfer": "推断：直接覆盖动作敏感/反事实训练想法；本项目应以它为对照，进一步隔离自车运动、人的响应与安全尾风险。",
+    "pilot": "同场景分支采集四动作短结果，比较普通对比、CLWM式难负例与风险校准；若只区分视角而不区分碰撞/进度则否定。",
+    "priority": "A",
+    "compute": "标签采集和多分支仿真是主要成本；低维投影头可小，但原论文预算尚未独立核验。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2609.05834",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint"
+  },
+  {
+    "id": "wm_one_step_limit",
+    "short_name": "one_step_limit",
+    "title": "One-Step Next-Latent Prediction Is Not a World Model",
+    "authors": [
+      "Wang, Shitong",
+      "Cai, Zhongang",
+      "Hong, Yuzhou"
+    ],
+    "authors_format": "family, given",
+    "year": 2026,
+    "first_published": "2026-09-28",
+    "latest_revision_date": "2026-09-28",
+    "arxiv_id": "2609.36227",
+    "version_reviewed": "v1",
+    "url": "https://arxiv.org/abs/2609.36227",
+    "fulltext_url": "https://arxiv.org/html/2609.36227v1",
+    "track": "worldmodel",
+    "method": "平方损失识别条件均值；均值复合通常不等于多步条件均值，非单射观测需要历史，边缘各向同性不约束转移。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2609.36227v1",
+        "section": "§3.1–3.5; Theorem 2, Theorem 4",
+        "finding": "给出非线性反例与线性高斯滚动协方差和；即便一步已精确，开放环误差仍可增加。"
+      }
+    ],
+    "limitations": "理论/合成过程不能据此否定全部JEPA；文中Markov表述只写条件均值关系，引用时应使用标准条件分布定义并明确定理假设。",
+    "transfer": "推断：对NavThinker评估多时域分布/行动排序、历史长度和残差校准，而非把MSE与防塌缩当充分条件。",
+    "pilot": "CPU构造非线性噪声与遮挡混淆反例；再测真实回合一步/开放环差异；增大记忆若不能改善决策则不扩展模型。",
+    "priority": "A",
+    "compute": "理论与小合成反例低成本；不提供真实导航即插即用算法。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2609.36227",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint"
+  },
+  {
+    "id": "wm_objective_bottleneck",
+    "short_name": "objective_bottleneck",
+    "title": "The Objective Is the Bottleneck: Latent World Models Encode What Their Planners Cannot Use",
+    "authors": [
+      "Singh, Joyjeet"
+    ],
+    "authors_format": "family, given",
+    "year": 2026,
+    "first_published": "2026-08-13",
+    "latest_revision_date": "2026-08-13",
+    "arxiv_id": "2608.12959",
+    "version_reviewed": "v1",
+    "url": "https://arxiv.org/abs/2608.12959",
+    "fulltext_url": "https://arxiv.org/html/2608.12959v1",
+    "track": "worldmodel",
+    "method": "冻结世界模型，仅换planner标量目标；检查latent欧氏距离是否随真实距离单调，以及学习代价对想象状态的分布偏移。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2608.12959v1",
+        "section": "§3–7; §9 Limitations",
+        "finding": "TwoRoom诊断中预测信息可读出但原距离饱和/反转；作者区分相关因素与因果，并指出真实帧拟合的代价可在想象帧失败。"
+      }
+    ],
+    "limitations": "单一玩具环境和有限checkpoint；位置probe使用真值，不能当视觉基线同信息对照；不证明社会导航同病。",
+    "transfer": "推断：先测排序/代价，再编辑权重；线性读出或外部代价是必须超越的便宜控制。",
+    "pilot": "冻结已有表征，在保留场景测latent距离、可达性/碰撞排序、预测与真实特征两分布；只换代价并保持候选/预算一致。",
+    "priority": "A",
+    "compute": "§2报告四核笔记本CPU诊断；无新世界模型训练，但probe/代价拟合与真值权限应独立计入。",
+    "verification_status": "fulltext_relevant_sections_verified",
+    "metadata_source": "https://arxiv.org/abs/2608.12959",
+    "resource_status": "正文/作者页面链接可见；未下载或执行代码与权重",
+    "correction_status": "检查官方摘要/版本页，未见撤稿标识；未做跨库穷尽更正调查",
+    "inference_notice": "transfer/pilot/priority 为本次研究推断，尚无本项目闭环实验验证",
+    "publication_type": "arXiv preprint"
+  }
+]

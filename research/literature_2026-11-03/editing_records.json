@@ -1,0 +1,283 @@
+[
+  {
+    "id": "E01",
+    "title": "Locating and Editing Factual Associations in GPT",
+    "authors": [
+      "Kevin Meng",
+      "David Bau",
+      "Alex Andonian",
+      "Yonatan Belinkov"
+    ],
+    "year": 2022,
+    "venue": "NeurIPS 2022",
+    "arxiv_id": "2202.05262",
+    "doi": "10.52202/068431-1262",
+    "url": "https://papers.baulab.info/papers/Meng-2022.pdf",
+    "version": "NeurIPS author PDF",
+    "method": "ROME：因果干预定位后，用保持旧映射的受约束最小二乘得到秩一更新。",
+    "evidence": [
+      {
+        "url": "https://papers.baulab.info/papers/Meng-2022.pdf",
+        "section": "§2.1; §3.1 Eq.(2); §3.2 Eq.(4)",
+        "finding": "闭式权重更新依赖键与目标值；目标值本身仍经优化。"
+      }
+    ],
+    "limitations": "实验证据来自语言事实编辑；不证明循环导航状态可同样局部修复，也不是完整流程无梯度。",
+    "transfer": "我们推断：借其保留集协方差与干预定位，将Falcon隐藏状态视为固定输入；不要照搬LLM层号。",
+    "pilot": "采集失败前与正常状态，先检验可分性，再比较协方差约束编辑和普通ridge头。",
+    "priority": "B",
+    "track": "weight_editing",
+    "verification_status": "primary_fulltext_sections_verified",
+    "checked_at": "2026-11-03",
+    "correction_status": "所用原始页面未见撤回标注；未做穷尽勘误检索。",
+    "claim_type": "source method + explicitly marked transfer inference"
+  },
+  {
+    "id": "E02",
+    "title": "AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models",
+    "authors": [
+      "Junfeng Fang",
+      "Houcheng Jiang",
+      "Kun Wang",
+      "Yunshan Ma",
+      "Jie Shi",
+      "Xiang Wang",
+      "Xiangnan He",
+      "Tat-Seng Chua"
+    ],
+    "year": 2025,
+    "preprint_year": 2024,
+    "venue": "ICLR 2025",
+    "arxiv_id": "2410.02355v4",
+    "doi": null,
+    "url": "https://arxiv.org/html/2410.02355v4",
+    "version": "v4, 2025-04-22; canonical author list includes Jie Shi",
+    "method": "用保留输入矩阵的零空间投影约束参数扰动。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2410.02355v4",
+        "section": "§3.1–3.3 Eq.(7)–(14), §3.2 footnote 1",
+        "finding": "精确零空间保持采样键映射不变；实现对小特征值做阈值近似（10^-2）。"
+      }
+    ],
+    "limitations": "有限保留样本及近似零空间不等于新场景闭环不退化；满行秩保留矩阵可能只剩零编辑。",
+    "transfer": "我们推断：保留正常导航状态的logits，在失败方向上改actor；需检查特征谱和新策略状态分布。",
+    "pilot": "512维保留协方差谱诊断；hard-null与soft-retention、bias-only同预算比较。",
+    "priority": "A",
+    "track": "weight_editing",
+    "verification_status": "primary_fulltext_sections_verified",
+    "checked_at": "2026-11-03",
+    "correction_status": "所用原始页面未见撤回标注；未做穷尽勘误检索。",
+    "claim_type": "source method + explicitly marked transfer inference"
+  },
+  {
+    "id": "E03",
+    "title": "Reproducibility Study of \"AlphaEdit: Null-Space Constrained Knowledge Editing for Language Models\"",
+    "authors": [
+      "Ananth K S",
+      "Arya Hariharan"
+    ],
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2606.26783v1",
+    "doi": null,
+    "url": "https://arxiv.org/html/2606.26783v1",
+    "version": "v1, 2026-06-25",
+    "method": "复核AlphaEdit并扩展架构、下游任务和连续编辑长度。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2606.26783v1",
+        "section": "§5.3 Table 5; §5.5; §7",
+        "finding": "作者报告大规模编辑后的性能退化；也明确未能分离生成异常中的实现因素与算法损害。"
+      }
+    ],
+    "limitations": "独立预印本；退化阈值不是跨模型定律，文内含模型依赖的恢复和未解决实现问题。",
+    "transfer": "我们推断：导航连续编辑须记录累积漂移；出现负结果先排查状态恢复/输入与动作一致性。",
+    "pilot": "比较独立编辑与连续叠加，保存每版校验和及保留集表现，不把5000次当导航安全阈值。",
+    "priority": "B",
+    "track": "weight_editing",
+    "verification_status": "primary_fulltext_sections_verified",
+    "checked_at": "2026-11-03",
+    "correction_status": "所用原始页面未见撤回标注；未做穷尽勘误检索。",
+    "claim_type": "source method + explicitly marked transfer inference"
+  },
+  {
+    "id": "E04",
+    "title": "Repairing Neural Networks for Safety in Robotic Systems using Predictive Models",
+    "authors": [
+      "Keyvan Majd",
+      "Geoffrey Clark",
+      "Georgios Fainekos",
+      "Heni Ben Amor"
+    ],
+    "year": 2024,
+    "venue": "arXiv preprint (version used)",
+    "arxiv_id": "2411.04408v1",
+    "doi": null,
+    "url": "https://arxiv.org/html/2411.04408v1",
+    "version": "v1, 2024-11-07",
+    "method": "SARP：通过可微预测模型与约束优化离线修复策略。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2411.04408v1",
+        "section": "§III–IV Algorithm 1; §V-A",
+        "finding": "将预测特征约束接入策略参数优化，并有移动机器人导航案例；训练样本约束不能升级为所有真实状态保证。"
+      }
+    ],
+    "limitations": "预测器误差会传入安全约束；连续动作可微优化不能原样用于四动作采样策略。",
+    "transfer": "直接重叠：世界模型辅助安全权重修复已有先例；我们的潜在差异只能落在离散视觉策略、预算、校准和分布外保留。",
+    "pilot": "作为可微修复对照；先穷举四动作风险，不把期望动作当真实执行动作。",
+    "priority": "A",
+    "track": "weight_editing",
+    "verification_status": "primary_fulltext_sections_verified",
+    "checked_at": "2026-11-03",
+    "correction_status": "所用原始页面未见撤回标注；未做穷尽勘误检索。",
+    "claim_type": "source method + explicitly marked transfer inference"
+  },
+  {
+    "id": "E05",
+    "title": "Behavior Uncloning: Distilling Mode Redirection into Policy Weights without Inference-Time Steering",
+    "authors": [
+      "Hao Wang",
+      "Jiuzhou Lei",
+      "Danyou Li",
+      "Bangya Liu",
+      "Minghui Zheng",
+      "Manling Li",
+      "Ruohan Zhang",
+      "Zhiwen Fan"
+    ],
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2606.29201v1",
+    "doi": null,
+    "url": "https://arxiv.org/html/2606.29201v1",
+    "version": "v1 header 2026-06-28; rendered manuscript date 2026-08-24 (recorded discrepancy)",
+    "method": "MoRE：训练行为模式分类器，用保留损失和模式重定向损失反传至策略，部署移除分类器。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2606.29201v1",
+        "section": "§3.2–3.4 Eq.(3)–(6); §4",
+        "finding": "编辑只用于仍可改变分支的样本；文中包括四足导航，永久行为编辑并非空白。"
+      }
+    ],
+    "limitations": "需要模式标签与梯度；BC/动作块体系与Falcon PPO离散动作不同。",
+    "transfer": "我们推断：在碰撞/震荡已经不可挽回前定位分叉时刻，比较retain+redirect编辑。",
+    "pilot": "相同失败/正常轨迹与标注预算，比较末层微调、MoRE式损失和闭式编辑。",
+    "priority": "A",
+    "track": "weight_editing",
+    "verification_status": "primary_fulltext_sections_verified",
+    "checked_at": "2026-11-03",
+    "correction_status": "所用原始页面未见撤回标注；未做穷尽勘误检索。",
+    "claim_type": "source method + explicitly marked transfer inference"
+  },
+  {
+    "id": "E06",
+    "title": "What do VLM-Based Vision-Language Navigation Models Rely on: Interpreting and Steering Policy Behavior",
+    "authors": [
+      "Débora Oliveira Makowski",
+      "Samiran Gode",
+      "Abhijeet Nayak",
+      "Marco Hutter",
+      "Cordelia Schmid",
+      "Lukas Rosenberger-Schmid",
+      "Wolfram Burgard"
+    ],
+    "year": 2026,
+    "venue": "arXiv preprint",
+    "arxiv_id": "2609.24576v1",
+    "doi": null,
+    "url": "https://arxiv.org/html/2609.24576v1",
+    "version": "v1, 2026-09-21",
+    "method": "通过输入干预、概念和激活方向解释并引导VLN行为。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2609.24576v1",
+        "section": "§IV-B.2 Eq.(12)–(13); §V-I",
+        "finding": "正负状态均值差形成steering向量；实机由操作者识别失败后触发，网络参数保持固定。"
+      }
+    ],
+    "limitations": "实机恢复含人工触发；不能把局部恢复当全自动导航提升或永久权重编辑。",
+    "transfer": "我们推断：适合作为故障状态可干预性的诊断及activation-steering对照。",
+    "pilot": "人工触发与自动触发分开报告；保存权重后无hook重载验证永久编辑。",
+    "priority": "A",
+    "track": "weight_editing",
+    "verification_status": "primary_fulltext_sections_verified",
+    "checked_at": "2026-11-03",
+    "correction_status": "所用原始页面未见撤回标注；未做穷尽勘误检索。",
+    "claim_type": "source method + explicitly marked transfer inference"
+  },
+  {
+    "id": "E07",
+    "title": "ReFT: Representation Finetuning for Language Models",
+    "authors": [
+      "Zhengxuan Wu",
+      "Aryaman Arora",
+      "Zheng Wang",
+      "Atticus Geiger",
+      "Dan Jurafsky",
+      "Christopher D. Manning",
+      "Christopher Potts"
+    ],
+    "year": 2024,
+    "venue": "NeurIPS 2024",
+    "arxiv_id": "2404.03592v3",
+    "doi": "10.52202/079017-2041",
+    "url": "https://arxiv.org/html/2404.03592v3",
+    "version": "v3; venue identity verified from NeurIPS proceedings",
+    "method": "LoReFT在冻结主干的低维表征子空间学习干预。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2404.03592v3",
+        "section": "§3.2 Eq.(2)–(4)",
+        "finding": "干预为h+Rᵀ(Wh+b−Rh)，学习R/W/b，使用任务损失；基础权重冻结。"
+      }
+    ],
+    "limitations": "低参数不等于无训练；带位置/条件的表征干预不能一般地当作单个永久权重修改。",
+    "transfer": "我们推断：可比较NavThinker未来特征子空间干预；最后线性读出前的无条件仿射变换可能可折叠，应数学核对。",
+    "pilot": "相同秩和数据预算比较LoReFT式干预与actor低秩编辑，记录推理路径差异。",
+    "priority": "B",
+    "track": "weight_editing",
+    "verification_status": "primary_fulltext_sections_verified",
+    "checked_at": "2026-11-03",
+    "correction_status": "所用原始页面未见撤回标注；未做穷尽勘误检索。",
+    "claim_type": "source method + explicitly marked transfer inference"
+  },
+  {
+    "id": "E08",
+    "title": "LoRA: Low-Rank Adaptation of Large Language Models",
+    "authors": [
+      "Edward J. Hu",
+      "Yelong Shen",
+      "Phillip Wallis",
+      "Zeyuan Allen-Zhu",
+      "Yuanzhi Li",
+      "Shean Wang",
+      "Lu Wang",
+      "Weizhu Chen"
+    ],
+    "year": 2021,
+    "venue": "arXiv preprint (version used)",
+    "arxiv_id": "2106.09685v2",
+    "doi": null,
+    "url": "https://arxiv.org/html/2106.09685v2",
+    "version": "v2, 2021-10-16",
+    "method": "冻结W，学习低秩BA更新，可合并到原矩阵。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2106.09685v2",
+        "section": "§4.1 Eq.(3); §7",
+        "finding": "训练低秩因子，部署可合并；低秩是适配结构，不自动提供行为局部性或安全保证。"
+      }
+    ],
+    "limitations": "Falcon四动作头本身只有2052参数；低秩增益须对比直接全头拟合而非夸大参数节约。",
+    "transfer": "必要便宜对照，DPed-VLN已使用LoRA适配VLM，因此仅用LoRA不构成新机制。",
+    "pilot": "rank1/2头更新与全头ridge/微调，同数据、搜索次数和回合预算。",
+    "priority": "B",
+    "track": "weight_editing",
+    "verification_status": "primary_fulltext_sections_verified",
+    "checked_at": "2026-11-03",
+    "correction_status": "所用原始页面未见撤回标注；未做穷尽勘误检索。",
+    "claim_type": "source method + explicitly marked transfer inference"
+  }
+]

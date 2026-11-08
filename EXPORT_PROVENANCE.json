@@ -1,0 +1,314 @@
+{
+  "export_date": "2026-11-08",
+  "policy": "Selected verbatim research files; operational credentials, datasets, model weights, source-paper full texts and full translations excluded. Local original frozen evidence remains authoritative. Historical machine-specific paths are retained as provenance, not configured launch targets.",
+  "files": [
+    {
+      "path": "research/falcon_notes.md",
+      "source": "research/falcon_notes.md",
+      "bytes": 6195,
+      "sha256": "c1f33d022a1eaf0934b60b15f4381021ea628f6e1315571205997780c8043835",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/navthinker_notes.md",
+      "source": "research/navthinker_notes.md",
+      "bytes": 5447,
+      "sha256": "e81a08301f791f776ffcb3fdb9764e3770746711be18a9a414452aabef27c4f0",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/dped_notes.md",
+      "source": "research/dped_notes.md",
+      "bytes": 5165,
+      "sha256": "854b2756e12ffd7c4edf406ed8f2eac2a35a540de17cf4c8f70eab43f84500ff",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/weight_edit_critical_audit.md",
+      "source": "research/weight_edit_critical_audit.md",
+      "bytes": 6120,
+      "sha256": "bd55baed7720b6459d00ea28a54e5c7110818c60314204a7648e58d787af8ddc",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/weight_edit_social_audit.md",
+      "source": "research/weight_edit_social_audit.md",
+      "bytes": 6655,
+      "sha256": "703834c5631c8f273c514d0fb20980716fd4dd343f256c4e8679b18c10e3f92b",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/weight_edit_dped_audit.md",
+      "source": "research/weight_edit_dped_audit.md",
+      "bytes": 8487,
+      "sha256": "a05046ca151c3d442636876fc97bb96a1478976cc9457aae9fcb159d111f3fb1",
+      "copy": "verbatim"
+    },
+    {
+      "path": "output/三篇导航论文_前置知识与研究路线.md",
+      "source": "output/三篇导航论文_前置知识与研究路线.md",
+      "bytes": 22439,
+      "sha256": "2772d0ad598d6665c5aed7e1ee4daf33a301ac2cdc65bafd07aad67d8282cf95",
+      "copy": "verbatim"
+    },
+    {
+      "path": "output/三篇导航论文_前置知识与研究路线.pdf",
+      "source": "output/三篇导航论文_前置知识与研究路线.pdf",
+      "bytes": 258548,
+      "sha256": "9e696898af86a184b3e67838b46b9bfe9f703e39ac06cbc6f3e662d7e35275b6",
+      "copy": "verbatim"
+    },
+    {
+      "path": "output/导航优化_数学物理WorldModel_文献调研_2026-11-03.md",
+      "source": "output/导航优化_数学物理WorldModel_文献调研_2026-11-03.md",
+      "bytes": 68933,
+      "sha256": "119d39821229f1acd7477ae9024b17a98ce037c61ee4d5cdd87310b4167a6829",
+      "copy": "verbatim"
+    },
+    {
+      "path": "output/pdf/导航优化_数学物理WorldModel_文献调研_2026-11-03.pdf",
+      "source": "output/pdf/导航优化_数学物理WorldModel_文献调研_2026-11-03.pdf",
+      "bytes": 392334,
+      "sha256": "c6449be29ab30f7fb3496d57508587fa2a70a72444d32e5de95b85bae5303065",
+      "copy": "verbatim"
+    },
+    {
+      "path": "output/权重编辑_导航研究建议.md",
+      "source": "output/权重编辑_导航研究建议.md",
+      "bytes": 8981,
+      "sha256": "b51f316b5e91bb018b89a8937b1b59be68590367c48ee0cc7e3b9ce2e24d2121",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/headroom_audit_20261108/REPORT.md",
+      "source": "research/headroom_audit_20261108/REPORT.md",
+      "bytes": 7190,
+      "sha256": "b6f082c16aa4fc2adbb5a9aee81df014738be93f171cec6e18e9ae93600a1175",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/headroom_audit_20261108/SCET_RECOVERABILITY_DESIGN.md",
+      "source": "research/headroom_audit_20261108/SCET_RECOVERABILITY_DESIGN.md",
+      "bytes": 6043,
+      "sha256": "504353a588f12b80d458a3a572674edd21583084d99d23abe91810d59a906b71",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/scet_review_20261108/REVIEW.md",
+      "source": "research/scet_review_20261108/REVIEW.md",
+      "bytes": 6300,
+      "sha256": "c0f08409e80329c5d6042d269969537f7f90c4b0516647de5fedcdb92331bc29",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/decision_world_model_20261104/ASTRA_ALGORITHM_MIGRATION.md",
+      "source": "research/decision_world_model_20261104/ASTRA_ALGORITHM_MIGRATION.md",
+      "bytes": 24873,
+      "sha256": "1ebd276d7d1000181c069ee9e1f9310cee5fea30ee653d515174139a81b1e67b",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/decision_world_model_20261104/ASTRA_ALGORITHM_MIGRATION_REFERENCES.md",
+      "source": "research/decision_world_model_20261104/ASTRA_ALGORITHM_MIGRATION_REFERENCES.md",
+      "bytes": 7050,
+      "sha256": "5bf424479cd978dc74ff68ce9a5c9fe424a7d0a893bcbf375b8fa25c597726f7",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/decision_world_model_20261104/ASTRA_MATHEMATICAL_MODELING.md",
+      "source": "research/decision_world_model_20261104/ASTRA_MATHEMATICAL_MODELING.md",
+      "bytes": 31831,
+      "sha256": "b2c06b281a38c39c96a2e98e70e103bf90d346341c042057e866878c9aaace0d",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/decision_world_model_20261104/ASTRA_REFERENCES.md",
+      "source": "research/decision_world_model_20261104/ASTRA_REFERENCES.md",
+      "bytes": 5211,
+      "sha256": "4e299fb4a9f7714b3a903dd8a4972659956f18cd2f27dbd7bb0a960e408424cd",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/decision_world_model_20261104/DESIGN.md",
+      "source": "research/decision_world_model_20261104/DESIGN.md",
+      "bytes": 18015,
+      "sha256": "421b04245932d81708fb654f6e863dc36caf1381b5469d08dc1d1e64b11e2a01",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/decision_world_model_20261104/EXPLICIT_TIME_AND_SAFETY.md",
+      "source": "research/decision_world_model_20261104/EXPLICIT_TIME_AND_SAFETY.md",
+      "bytes": 15202,
+      "sha256": "435d45fd4128a0ce75918a8425baddd71aa722de246f3b228b744787e9a9b055",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/literature_2026-11-03/build_stats.json",
+      "source": "research/literature_2026-11-03/build_stats.json",
+      "bytes": 303,
+      "sha256": "fe1d1d389ccefbaae1bcf60699ca84526d6b40e8fe78ae9f39bb26fceca0bd64",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/literature_2026-11-03/dedup_log.json",
+      "source": "research/literature_2026-11-03/dedup_log.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/literature_2026-11-03/editing_notes.md",
+      "source": "research/literature_2026-11-03/editing_notes.md",
+      "bytes": 3585,
+      "sha256": "6b214762a02811d5babe2c7351eff06c56e912c062c1b0c4b3a7ed0ad23e2203",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/literature_2026-11-03/editing_records.json",
+      "source": "research/literature_2026-11-03/editing_records.json",
+      "bytes": 12433,
+      "sha256": "f693054b9baae6e349436e60f5763c5455a1c2eed70a9f40fd7b803aded80003",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/literature_2026-11-03/math_notes.md",
+      "source": "research/literature_2026-11-03/math_notes.md",
+      "bytes": 10558,
+      "sha256": "d7406e8afc7c4d199a8a64ebe3facd77d0b77f682ff2aa47b169c744a9ed9d18",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/literature_2026-11-03/math_records.json",
+      "source": "research/literature_2026-11-03/math_records.json",
+      "bytes": 22804,
+      "sha256": "f5018343fa30479f7f0b01a7574c3c63451e4235069af3f7120babc90efcb97b",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/literature_2026-11-03/physics_notes.md",
+      "source": "research/literature_2026-11-03/physics_notes.md",
+      "bytes": 13321,
+      "sha256": "64e58c07611d55016a833f0a002b4b012057aaa7be2f77acd781b1431eda6fe4",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/literature_2026-11-03/physics_records.json",
+      "source": "research/literature_2026-11-03/physics_records.json",
+      "bytes": 20081,
+      "sha256": "3df0e88961c6c2a71b63f177fad07466f91674808337c4574f1f1b1384ba7052",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/literature_2026-11-03/synthesis.md",
+      "source": "research/literature_2026-11-03/synthesis.md",
+      "bytes": 21769,
+      "sha256": "f78283eab2d78bf629e0b7b18a8344c2decb6f6de648ac94968517dfe821e17b",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/literature_2026-11-03/worldmodel_notes.md",
+      "source": "research/literature_2026-11-03/worldmodel_notes.md",
+      "bytes": 9307,
+      "sha256": "43c8228ce32839107c3eb87c8fda68c1e3e46a3a2dec2896bcbeda49f41fdd29",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/literature_2026-11-03/worldmodel_queries.json",
+      "source": "research/literature_2026-11-03/worldmodel_queries.json",
+      "bytes": 2553,
+      "sha256": "4a5a1d4f2d4e3981b3f4a58da369c1befff85a7dbea4b9d7f7b1aec5048743b1",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/literature_2026-11-03/worldmodel_records.json",
+      "source": "research/literature_2026-11-03/worldmodel_records.json",
+      "bytes": 31215,
+      "sha256": "b91f75270256d40c46c01d8d703da73c4ead29ecd2739ea649a88cb1facd294b",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/literature_2026-11-03/worldmodel_supplemental_records.json",
+      "source": "research/literature_2026-11-03/worldmodel_supplemental_records.json",
+      "bytes": 6275,
+      "sha256": "466dfc343a4658c1402a5ea46be00c4a8da3dabc9e5f80077cc14cc4602a70d6",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/headroom_audit_20261108/literature/references.bib",
+      "source": "research/headroom_audit_20261108/literature/references.bib",
+      "bytes": 2932,
+      "sha256": "ffab230900f7fbb628d7ad512630c76246c88439c1c6bcdb9ab08dd4e18b827b",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/headroom_audit_20261108/literature/references.nbib",
+      "source": "research/headroom_audit_20261108/literature/references.nbib",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/headroom_audit_20261108/literature/references.ris",
+      "source": "research/headroom_audit_20261108/literature/references.ris",
+      "bytes": 2523,
+      "sha256": "7db730c67965b78ca2e57041a2a5da9268f275700a66e844765c704d9dbeac2f",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/headroom_audit_20261108/literature/registry.json",
+      "source": "research/headroom_audit_20261108/literature/registry.json",
+      "bytes": 5133,
+      "sha256": "e87bd75bec7db8105f378cad1cd00f8ea0c6aae50f117a5f92380c81bfb184e5",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/headroom_audit_20261108/literature/引用文件核验报告.md",
+      "source": "research/headroom_audit_20261108/literature/引用文件核验报告.md",
+      "bytes": 432,
+      "sha256": "a24d3c88e6a41f3115a0da4e224a639bb998042485372fc07d79e57aa09229d2",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/headroom_audit_20261108/literature/文献注册表.jsonl",
+      "source": "research/headroom_audit_20261108/literature/文献注册表.jsonl",
+      "bytes": 7571,
+      "sha256": "b102aca5d84ee23f79fcd892e52da9cf1cf69628444b93b12745dfcd32bd4efa",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/headroom_audit_20261108/literature/检索记录.md",
+      "source": "research/headroom_audit_20261108/literature/检索记录.md",
+      "bytes": 1963,
+      "sha256": "c16b699bf5aa7cb05c641f4755ae5391bcbf6fff6acf8d00ea40ea560a28219b",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/headroom_audit_20261108/literature/问题状态矩阵.yaml",
+      "source": "research/headroom_audit_20261108/literature/问题状态矩阵.yaml",
+      "bytes": 1560,
+      "sha256": "93b0893294d788b10269c5807745f33f79ae3dd0203039e27b5fdaaeeda78354",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/sota_temporal_20261105/THEORY.md",
+      "source": "research/sota_temporal_20261105/THEORY.md",
+      "bytes": 11211,
+      "sha256": "c153b9d053a6214e20552ec0649c17b76c783128daca9714ca104fef755982d4",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/sota_temporal_20261105/THEORY_ADVANCED.md",
+      "source": "research/sota_temporal_20261105/THEORY_ADVANCED.md",
+      "bytes": 9285,
+      "sha256": "98afc5d9df33cf4b3fe88d648ace7f764847b4ba44006c584a1d753fc6ceebef",
+      "copy": "verbatim"
+    },
+    {
+      "path": "research/sota_temporal_20261105/PLAN.md",
+      "source": "research/sota_temporal_20261105/PLAN.md",
+      "bytes": 6013,
+      "sha256": "69cfa9b75949a0b6c0282ad33cab930d1e8e0c440d8384f29d6fb04281d0d538",
+      "copy": "verbatim"
+    }
+  ]
+}

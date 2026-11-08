@@ -1,0 +1,418 @@
+[
+  {
+    "id": "M01",
+    "title": "Egocentric Conformal Prediction for Safe and Efficient Navigation in Dynamic Cluttered Environments",
+    "authors": [
+      "Shin, Jaeuk",
+      "Lee, Jungjin",
+      "Yang, Insoon"
+    ],
+    "year": 2025,
+    "arxiv_id": "2504.00447",
+    "doi": "10.1109/CDC57313.2025.11312645",
+    "url": "https://arxiv.org/abs/2504.00447",
+    "version": "v1",
+    "published": "2025-04-01",
+    "updated": "2025-04-01",
+    "track": "决策相关校准",
+    "method": "ECP用机器人候选位置与实际/预测障碍集的距离差定义非一致性分数，有限动作序列版避免在整个连续状态空间更新校准器。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2504.00447v1",
+        "section": "§4.1–4.2; Proposition 1; Algorithm 1",
+        "finding": "ECP用机器人候选位置与实际/预测障碍集的距离差定义非一致性分数，有限动作序列版避免在整个连续状态空间更新校准器。"
+      }
+    ],
+    "limitations": "安全集合包含关系要求相同校准数据及相同校准水平；连续空间离散化昂贵，有限序列仍随预测长度组合增长。目标点覆盖不能直接替代连续动作扫掠体避碰。",
+    "transfer": "最适合Falcon四动作短视界：校准动作造成的危险距离误差，而非统一惩罚全轨迹ADE。NavThinker可在少量候选动作未来上使用相同思路。",
+    "pilot": "冻结策略/预测器，比较欧氏误差分数与决策距离分数；同样校准样本、风险预算和动作枚举长度，测碰撞、进展、超时、干预率。",
+    "priority": "high",
+    "verification_status": "identity_and_relevant_fulltext_verified",
+    "metadata_source": "https://arxiv.org/abs/2504.00447",
+    "correction_status": "已核验官方摘要页与版本历史，入口未见撤稿提示；未做穷尽争议检索",
+    "inference_boundary": "transfer与pilot为本调研推断，非论文在Falcon/NavThinker/DPed-VLN上的实测结论",
+    "accessed": "2026-11-03",
+    "venue": "2025 IEEE 64th Conference on Decision and Control (CDC)",
+    "local_evidence": "math_sources/2504.00447_html.txt",
+    "formal_year": 2025,
+    "venue_source": "https://ieeexplore.ieee.org/document/11312645/"
+  },
+  {
+    "id": "M02",
+    "title": "Towards Generalizable Safety in Crowd Navigation via Conformal Uncertainty Handling",
+    "authors": [
+      "Yao, Jianpeng",
+      "Zhang, Xiaopan",
+      "Xia, Yu",
+      "Wang, Zejin",
+      "Roy-Chowdhury, Amit K.",
+      "Li, Jiachen"
+    ],
+    "year": 2025,
+    "arxiv_id": "2508.05634",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2508.05634",
+    "version": "v1",
+    "published": "2025-08-07",
+    "updated": "2025-08-07",
+    "track": "共形预测与约束强化学习",
+    "method": "GenSafeNav把DtACI轨迹不确定性同时加入策略输入和预测侵入代价，使用奖励/代价双critic与PPO-Lagrangian。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2508.05634v1",
+        "section": "§3.4–3.6; §6 Limitations; Appendix M",
+        "finding": "GenSafeNav把DtACI轨迹不确定性同时加入策略输入和预测侵入代价，使用奖励/代价双critic与PPO-Lagrangian。"
+      }
+    ],
+    "limitations": "文中限制包括任意形状静态障碍、行人漏检、尚未消除的OOD退化。主要环境为二维CrowdNav，不能将其SR直接与Habitat/Falcon比较。",
+    "transfer": "是“预测不确定性+安全RL”的直接先例；可提供风险教师与强baseline，但完整移植需改变观测并重训策略。",
+    "pilot": "先做冻结策略上的外部风险读出；另设有限预算头部微调对照。必须把校准覆盖与回合避碰分别统计。",
+    "priority": "high",
+    "verification_status": "identity_and_relevant_fulltext_verified",
+    "metadata_source": "https://arxiv.org/abs/2508.05634",
+    "correction_status": "已核验官方摘要页与版本历史，入口未见撤稿提示；未做穷尽争议检索",
+    "inference_boundary": "transfer与pilot为本调研推断，非论文在Falcon/NavThinker/DPed-VLN上的实测结论",
+    "accessed": "2026-11-03",
+    "venue": "arXiv (version used)",
+    "local_evidence": "math_sources/2508.05634_html.txt"
+  },
+  {
+    "id": "M03",
+    "title": "Risk-Sensitive Crowd Navigation with Adaptive Ellipsoidal Conformal Prediction",
+    "authors": [
+      "Li, Ruihan A.",
+      "Guo, Ziyao",
+      "Li, Yingying"
+    ],
+    "year": 2026,
+    "arxiv_id": "2610.07474",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2610.07474",
+    "version": "v1",
+    "published": "2026-10-05",
+    "updated": "2026-10-05",
+    "track": "各向异性不确定性与尾部风险",
+    "method": "AECP以因果可用残差更新单位行列式椭球形状，源时刻形状评价延迟残差；DtACI独立校准尺度，episode CVaR调节PPO安全乘子。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2610.07474v1",
+        "section": "§III-B Eqs.1–7; §III-C; §IV Coverage Evaluation",
+        "finding": "AECP以因果可用残差更新单位行列式椭球形状，源时刻形状评价延迟残差；DtACI独立校准尺度，episode CVaR调节PPO安全乘子。"
+      }
+    ],
+    "limitations": "作者明确：部署半径截断后不再保证名义覆盖；OOD实测存在欠覆盖。二维连续速度、GST输入及重训PPO不等于Falcon视觉离散动作设置。",
+    "transfer": "直接否定“椭球+CVaR社会导航”作为新点。可研究有限动作、部分观测条件下形状—尺度—校准失配及只改策略头的损失。",
+    "pilot": "比较圆形/椭球×均值代价/CVaR的完整2×2；冻结和重训分开，报告未截断与部署截断覆盖、同场景配对差异。",
+    "priority": "high",
+    "verification_status": "identity_and_relevant_fulltext_verified",
+    "metadata_source": "https://arxiv.org/abs/2610.07474",
+    "correction_status": "已核验官方摘要页与版本历史，入口未见撤稿提示；未做穷尽争议检索",
+    "inference_boundary": "transfer与pilot为本调研推断，非论文在Falcon/NavThinker/DPed-VLN上的实测结论",
+    "accessed": "2026-11-03",
+    "venue": "arXiv (version used)",
+    "local_evidence": "math_sources/2610.07474_html.txt"
+  },
+  {
+    "id": "M04",
+    "title": "Interaction-aware Conformal Prediction for Crowd Navigation",
+    "authors": [
+      "Huang, Zhe",
+      "Ji, Tianchen",
+      "Zhang, Heling",
+      "Pouria, Fatemeh Cheraghi",
+      "Driggs-Campbell, Katherine",
+      "Dong, Roy"
+    ],
+    "year": 2025,
+    "arxiv_id": "2502.06221",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2502.06221",
+    "version": "v1",
+    "published": "2025-02-10",
+    "updated": "2025-02-10",
+    "track": "交互与动作依赖校准",
+    "method": "ICP交替机器人MPC与根据计划生成的人类ORCA模拟轨迹，重新构造动作依赖校准集；预测GST权重固定。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2502.06221v1",
+        "section": "§3 Theorem 3.1; §4.2–4.3 Eqs.3–7",
+        "finding": "ICP交替机器人MPC与根据计划生成的人类ORCA模拟轨迹，重新构造动作依赖校准集；预测GST权重固定。"
+      }
+    ],
+    "limitations": "校准依赖交互模拟器及误差交换性假设；不能把ORCA合成分布当真实人类分布。非凸MPC一般无全局可行性保证，文本分位数有限样本索引需实现时独立核查。",
+    "transfer": "NavThinker对动作条件化未来建模之后仍需动作条件化风险校准；策略编辑改变动作与访问状态分布，旧校准集可能失效。",
+    "pilot": "固定场景种子，原策略校准vs编辑后重校准vs动作分层校准；避免用测试轨迹校准，比较覆盖/碰撞及分层样本稀疏程度。",
+    "priority": "high",
+    "verification_status": "identity_and_relevant_fulltext_verified",
+    "metadata_source": "https://arxiv.org/abs/2502.06221",
+    "correction_status": "已核验官方摘要页与版本历史，入口未见撤稿提示；未做穷尽争议检索",
+    "inference_boundary": "transfer与pilot为本调研推断，非论文在Falcon/NavThinker/DPed-VLN上的实测结论",
+    "accessed": "2026-11-03",
+    "venue": "arXiv (version used)",
+    "local_evidence": "math_sources/2502.06221_html.txt"
+  },
+  {
+    "id": "M05",
+    "title": "Safety-Critical Control with Uncertainty Quantification using Adaptive Conformal Prediction",
+    "authors": [
+      "Zhou, Hao",
+      "Zhang, Yanze",
+      "Luo, Wenhao"
+    ],
+    "year": 2024,
+    "arxiv_id": "2407.03569",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2407.03569",
+    "version": "v2",
+    "published": "2024-07-04",
+    "updated": "2024-07-08",
+    "track": "共形校准控制屏障",
+    "method": "ACP-SBC直接校准预测/真实安全屏障表达式的误差，采用误差分位数收紧CBF约束并放入MPC；验证单积分器和独轮车噪声场景。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2407.03569v2",
+        "section": "§III-A Eqs.10–14, Theorem 1 and Proposition 1; §IV",
+        "finding": "ACP-SBC直接校准预测/真实安全屏障表达式的误差，采用误差分位数收紧CBF约束并放入MPC；验证单积分器和独轮车噪声场景。"
+      }
+    ],
+    "limitations": "需要动力学、屏障正则性、有效误差界与可行控制输入；连续时间屏障不自动覆盖离散转动/前进动作或动作执行过程。",
+    "transfer": "提供“校准控制相关误差”的理论材料。Falcon应做动作级安全掩码/短轨迹最小间距，而非生搬连续QP。",
+    "pilot": "先用模拟器真状态作oracle筛选诊断，再用允许观测估计状态；两种成绩分列，检测空安全动作集合与恢复策略。",
+    "priority": "medium",
+    "verification_status": "identity_and_relevant_fulltext_verified",
+    "metadata_source": "https://arxiv.org/abs/2407.03569",
+    "correction_status": "已核验官方摘要页与版本历史，入口未见撤稿提示；未做穷尽争议检索",
+    "inference_boundary": "transfer与pilot为本调研推断，非论文在Falcon/NavThinker/DPed-VLN上的实测结论",
+    "accessed": "2026-11-03",
+    "venue": "arXiv (version used)",
+    "local_evidence": "math_sources/2407.03569_html.txt"
+  },
+  {
+    "id": "M06",
+    "title": "Integrating Predictive Motion Uncertainties with Distributionally Robust Risk-Aware Control for Safe Robot Navigation in Crowds",
+    "authors": [
+      "Ryu, Kanghyun",
+      "Mehr, Negar"
+    ],
+    "year": 2024,
+    "arxiv_id": "2403.05081",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2403.05081",
+    "version": "v1",
+    "published": "2024-03-08",
+    "updated": "2024-03-08",
+    "track": "分布鲁棒机会约束与CVaR",
+    "method": "以碰撞概率机会约束表达风险，使用分布鲁棒CVaR保守近似，通过采样优化把预测不确定性纳入实时MPC。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2403.05081v1",
+        "section": "§III-A/B; §IV DRCC-MPC formulation",
+        "finding": "以碰撞概率机会约束表达风险，使用分布鲁棒CVaR保守近似，通过采样优化把预测不确定性纳入实时MPC。"
+      }
+    ],
+    "limitations": "保证以真实分布处于歧义集合为前提；分布/矩估计误差与动作条件化分布漂移需检查。保守约束可能换来停滞，原实现依赖预测器和求解器。",
+    "transfer": "对NavThinker低维未来成本建模有直接价值；Falcon少动作枚举可避免大型连续优化，代价是无法照搬原闭环保证。",
+    "pilot": "对同一批未来样本比较均值、上分位数、CVaR动作排序；记录尾部样本数并增加风险预算扫参，保持SPL/超时对照。",
+    "priority": "high",
+    "verification_status": "identity_and_relevant_fulltext_verified",
+    "metadata_source": "https://arxiv.org/abs/2403.05081",
+    "correction_status": "已核验官方摘要页与版本历史，入口未见撤稿提示；未做穷尽争议检索",
+    "inference_boundary": "transfer与pilot为本调研推断，非论文在Falcon/NavThinker/DPed-VLN上的实测结论",
+    "accessed": "2026-11-03",
+    "venue": "arXiv (version used)",
+    "local_evidence": "math_sources/2403.05081_html.txt"
+  },
+  {
+    "id": "M07",
+    "title": "Safe POMDP Online Planning among Dynamic Agents via Adaptive Conformal Prediction",
+    "authors": [
+      "Sheng, Shili",
+      "Yu, Pian",
+      "Parker, David",
+      "Kwiatkowska, Marta",
+      "Feng, Lu"
+    ],
+    "year": 2024,
+    "arxiv_id": "2404.15557",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2404.15557",
+    "version": "v2",
+    "published": "2024-04-23",
+    "updated": "2024-09-06",
+    "track": "部分可观测与安全屏蔽",
+    "method": "以ACP预测区域构造动态安全shield，限制POMCP可选动作，并在有限POMDP信念支持中计算winning regions。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2404.15557v2",
+        "section": "§II; Algorithm 1–2; Theorem 1 and Complexity",
+        "finding": "以ACP预测区域构造动态安全shield，限制POMCP可选动作，并在有限POMDP信念支持中计算winning regions。"
+      }
+    ],
+    "limitations": "正文承认粒子近似信念可能损害保证，定理依赖足够准确的信念估计；更大粒子/搜索数带来计算代价。视觉隐状态并非已知有限POMDP。",
+    "transfer": "支持把未观测人群/遮挡风险纳入belief，而不只预测已检测行人；可作离散动作安全筛选的概念baseline。",
+    "pilot": "先做短历史/不同遮挡率的风险读出；报告漏检状态下校准覆盖，oracle可观测与真实视觉观测绝不混分。",
+    "priority": "medium",
+    "verification_status": "identity_and_relevant_fulltext_verified",
+    "metadata_source": "https://arxiv.org/abs/2404.15557",
+    "correction_status": "已核验官方摘要页与版本历史，入口未见撤稿提示；未做穷尽争议检索",
+    "inference_boundary": "transfer与pilot为本调研推断，非论文在Falcon/NavThinker/DPed-VLN上的实测结论",
+    "accessed": "2026-11-03",
+    "venue": "arXiv (version used)",
+    "local_evidence": "math_sources/2404.15557_html.txt"
+  },
+  {
+    "id": "M08",
+    "title": "DR-MPC: Deep Residual Model Predictive Control for Real-world Social Navigation",
+    "authors": [
+      "Han, James R.",
+      "Thomas, Hugues",
+      "Zhang, Jian",
+      "Rhinehart, Nicholas",
+      "Barfoot, Timothy D."
+    ],
+    "year": 2024,
+    "arxiv_id": "2410.10646",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2410.10646",
+    "version": "v2",
+    "published": "2024-10-14",
+    "updated": "2025-02-14",
+    "track": "残差学习与控制器混合",
+    "method": "DR-MPC产生六个避人候选动作，学习混合系数将其与MPC路径跟踪动作组合，并用OOD检测/启发式安全组件辅助真实环境学习。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2410.10646v2",
+        "section": "§IV DR-MPC Policy Architecture; §VII-D Limitations",
+        "finding": "DR-MPC产生六个避人候选动作，学习混合系数将其与MPC路径跟踪动作组合，并用OOD检测/启发式安全组件辅助真实环境学习。"
+      }
+    ],
+    "limitations": "连续速度加权混合不适用于离散动作标签；文中指出奖励手调、人圆形近似误检及实验人群熟悉机器人等限制。",
+    "transfer": "是小数据策略修复的控制参考；可将安全教师的动作分布蒸馏到Falcon头部，而不是重训视觉骨干。",
+    "pilot": "对比外部混合/屏蔽、头部拟合与同预算PPO微调；测干预频率、正常场景保留、窄门与拥挤交叉口。",
+    "priority": "high",
+    "verification_status": "identity_and_relevant_fulltext_verified",
+    "metadata_source": "https://arxiv.org/abs/2410.10646",
+    "correction_status": "已核验官方摘要页与版本历史，入口未见撤稿提示；未做穷尽争议检索",
+    "inference_boundary": "transfer与pilot为本调研推断，非论文在Falcon/NavThinker/DPed-VLN上的实测结论",
+    "accessed": "2026-11-03",
+    "venue": "IEEE Robotics and Automation Letters, 2025",
+    "local_evidence": "math_sources/2410.10646_html.txt",
+    "formal_year": 2025,
+    "venue_source": "https://leaf.utias.utoronto.ca/publication/han-2024-drmpc/"
+  },
+  {
+    "id": "M09",
+    "title": "Control Barrier Functions: Theory and Applications",
+    "authors": [
+      "Ames, Aaron D.",
+      "Coogan, Samuel",
+      "Egerstedt, Magnus",
+      "Notomista, Gennaro",
+      "Sreenath, Koushil",
+      "Tabuada, Paulo"
+    ],
+    "year": 2019,
+    "arxiv_id": "1903.11199",
+    "doi": null,
+    "url": "https://arxiv.org/abs/1903.11199",
+    "version": "v1",
+    "published": "2019-03-27",
+    "updated": "2019-03-27",
+    "track": "控制屏障函数基础",
+    "method": "CBF将安全表示为集合正向不变性，并用约束优化最小修改名义控制器；安全与到达目标的活性是不同要求。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/1903.11199v1",
+        "section": "§II–III control barrier definitions and optimization controllers",
+        "finding": "CBF将安全表示为集合正向不变性，并用约束优化最小修改名义控制器；安全与到达目标的活性是不同要求。"
+      }
+    ],
+    "limitations": "理论依赖已建模动力学、正则性、初始安全与可行控制。不存在“加一个安全惩罚就得到CBF保证”的结论。",
+    "transfer": "属于前置知识锚点，用于理解为何安全过滤可能冻结，以及为何Falcon离散动作需要单独分析。",
+    "pilot": "用二维玩具系统检查屏障、离散时间与输入界；不把玩具系统通过当作Habitat安全结果。",
+    "priority": "foundation",
+    "verification_status": "identity_and_relevant_fulltext_verified",
+    "metadata_source": "https://arxiv.org/abs/1903.11199",
+    "correction_status": "已核验官方摘要页与版本历史，入口未见撤稿提示；未做穷尽争议检索",
+    "inference_boundary": "transfer与pilot为本调研推断，非论文在Falcon/NavThinker/DPed-VLN上的实测结论",
+    "accessed": "2026-11-03",
+    "venue": "arXiv (version used)",
+    "local_evidence": "math_sources/1903.11199_html.txt"
+  },
+  {
+    "id": "M10",
+    "title": "BIG-CBF: Behavior-Imagination-Guided Control Barrier Function with Shared Uncertainty for Mobile Robot Navigation",
+    "authors": [
+      "Li, Shibo",
+      "Wang, Zhongcheng",
+      "Cao, Jiahe",
+      "Yang, Jianhua",
+      "Wu, Ke"
+    ],
+    "year": 2026,
+    "arxiv_id": "2609.14343",
+    "doi": null,
+    "url": "https://arxiv.org/abs/2609.14343",
+    "version": "v1",
+    "published": "2026-09-13",
+    "updated": "2026-09-13",
+    "track": "行为想象与共享不确定性",
+    "method": "BIG-CBF低频比较六种闭环行为，高频重算控制并通过硬CBF；规划和执行共享延迟、预测及执行误差来源。",
+    "evidence": [
+      {
+        "url": "https://arxiv.org/html/2609.14343v1",
+        "section": "§III-A Eq.7–13; §III-B; §III-C Eqs.25–26",
+        "finding": "BIG-CBF低频比较六种闭环行为，高频重算控制并通过硬CBF；规划和执行共享延迟、预测及执行误差来源。"
+      }
+    ],
+    "limitations": "原机器人为全向连续控制，采样命令级滤波与假设误差模型不可直接转换为视觉四动作的永远安全保证。15次硬件运行不是全分布证明。",
+    "transfer": "是“世界想象+安全过滤减少冻结”的直接竞争。NavThinker可研究想象风险与执行风险的一致性，Falcon则需离散可行动作版本。",
+    "pilot": "有限动作/动作片段rollout，共享vs不共享风险模型；同时比较纯CBF/纯策略/带想象筛选，统计停滞与切换频率。",
+    "priority": "high",
+    "verification_status": "identity_and_relevant_fulltext_verified",
+    "metadata_source": "https://arxiv.org/abs/2609.14343",
+    "correction_status": "已核验官方摘要页与版本历史，入口未见撤稿提示；未做穷尽争议检索",
+    "inference_boundary": "transfer与pilot为本调研推断，非论文在Falcon/NavThinker/DPed-VLN上的实测结论",
+    "accessed": "2026-11-03",
+    "venue": "arXiv (version used)",
+    "local_evidence": "math_sources/2609.14343_html.txt"
+  },
+  {
+    "id": "M11",
+    "title": "When Environments Shift: Safe Planning with Generative Priors and Robust Conformal Prediction",
+    "authors": [
+      "Kaizer Rahaman",
+      "Jyotirmoy V. Deshmukh",
+      "Ashish R. Hota",
+      "Lars Lindemann"
+    ],
+    "year": 2026,
+    "arxiv_id": null,
+    "doi": null,
+    "url": "https://proceedings.mlr.press/v331/rahaman26a.html",
+    "version": "PMLR 331:601–623",
+    "published": "2026-06-17",
+    "track": "生成模型与鲁棒共形预测",
+    "method": "用可观测环境参数条件化扩散模型，生成轨迹或误差分数校准样本，并通过鲁棒CP计入生成模型失配后嵌入MPC。",
+    "evidence": [
+      {
+        "url": "https://raw.githubusercontent.com/mlresearch/v331/main/assets/rahaman26a/rahaman26a.pdf",
+        "section": "§2–4; §6; Appendix 7.3",
+        "finding": "条件生成模型捕获参数化分布移位；鲁棒区域要覆盖生成数据与实际分布的偏差。"
+      }
+    ],
+    "limitations": "要求有意义的可观测环境参数和受控模型分布失配；实验为ORCA，正文将交互式及非平稳移位列为未来方向。不能用世界模型自己生成的数据无条件自证正确。",
+    "transfer": "与NavThinker世界模型直接相接：预测器可输出校准数据，但必须另估模型偏差；只训练低维残差分布比训练视频世界模型省算力。",
+    "pilot": "先用经验残差重采样/简单条件高斯对照，再决定是否需要小型条件扩散；在held-out场景检验失配界与覆盖，禁用测试真值训练。",
+    "priority": "high",
+    "verification_status": "identity_and_relevant_fulltext_verified",
+    "metadata_source": "https://proceedings.mlr.press/v331/rahaman26a.html",
+    "correction_status": "PMLR正式版本入口未见更正提示；未做穷尽争议检索",
+    "inference_boundary": "transfer与pilot为调研推断，非三baseline上的实测结论",
+    "accessed": "2026-11-03",
+    "venue": "Proceedings of The 8th Annual Learning for Dynamics and Control Conference",
+    "volume": "331",
+    "pages": "601--623",
+    "local_evidence": "math_sources/rahaman26a.txt"
+  }
+]

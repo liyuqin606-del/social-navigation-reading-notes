@@ -1,0 +1,22 @@
+{
+  "total": 50,
+  "related": 47,
+  "seeds": 3,
+  "tracks": {
+    "editing": 8,
+    "physics": 11,
+    "math": 11,
+    "worldmodel": 17,
+    "seed": 3
+  },
+  "bib": 50,
+  "ris": 50,
+  "nbib": 1,
+  "merged": 0,
+  "missing_fields": {
+    "doi": 40,
+    "arxiv_id": 5,
+    "venue": 21,
+    "pmid": 49
+  }
+}
